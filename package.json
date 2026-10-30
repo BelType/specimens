@@ -1,0 +1,42 @@
+{
+  "name": "@beltype/specimens",
+  "version": "0.1.0",
+  "description": "The documents every BelType interface is shown and tested on: finished HTML documents with their assets, and the list that finds them.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BelType/specimens.git"
+  },
+  "homepage": "https://codeberg.org/BelType/specimens",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "specimens"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "tsc -p tsconfig.json",
+    "test": "node --test 'test/*.test.ts'",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@beltype/common": "0.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "7.0.2"
+  },
+  "bugs": {
+    "url": "https://codeberg.org/BelType/specimens/issues"
+  }
+}
