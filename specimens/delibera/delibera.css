@@ -1,0 +1,57 @@
+/* A resolution of the Regional Government of Sardinia on A4: the issuing body and the act's identifiers on the first page, the act's number running at the head of every later page, "pag. N di M" at the foot, a hanging-label identifiers block, a summary table of revenue, the numbered resolution clauses and the signatures. */
+
+@font-face { font-family: "Source Sans 3"; src: url("fonts/SourceSans3-Variable.woff2") format("woff2"); font-weight: 200 900; font-style: normal; }
+@font-face { font-family: "Source Serif 4"; src: url("fonts/SourceSerif4-Variable.woff2") format("woff2"); font-weight: 200 900; font-style: normal; }
+
+:root { --ink: #1a1a1a; --quiet: #5a5a5a; --rule: #9a9a9a; --red: #b0181e; }
+
+@page {
+  size: A4;
+  margin: 30mm 26mm 26mm 28mm;
+  @top-center { content: string(atto); font: 400 8.5pt "Source Sans 3"; color: var(--quiet); }
+  @bottom-center { content: "pag. " counter(page) " di " counter(pages); font: 400 8.5pt "Source Sans 3"; color: var(--quiet); }
+}
+/* The first page carries the act's identifiers in its own head: the running one would only repeat them. */
+@page :first {
+  margin-top: 16mm;
+  @top-center { content: none; }
+}
+
+html { font: 400 11pt/1.5 "Source Sans 3", sans-serif; color: var(--ink); hyphens: auto; font-variant-numeric: lining-nums; }
+body { margin: 0; }
+p { margin: 0 0 2.5mm; text-align: justify; orphans: 3; widows: 3; }
+
+/* The issuing body: the emblem drawn inline, the name in the two official languages. */
+header.ente { text-align: center; margin-bottom: 9mm; }
+header.ente svg { display: block; width: 15mm; height: auto; margin: 0 auto 2.5mm; }
+.ente-nome { font: 600 8pt/1.35 "Source Serif 4", serif; letter-spacing: 0.06em; text-transform: uppercase; }
+.estremi { font: 600 12.5pt/1.3 "Source Sans 3", sans-serif; margin-top: 7mm; letter-spacing: 0.01em; string-set: atto content(); }
+
+/* The identifiers block: each label hangs in its own column beside its text. */
+dl.identificativi { display: grid; grid-template-columns: 24mm 1fr; column-gap: 5mm; margin: 0 0 8mm; padding: 3mm 0; border-top: 0.75pt solid var(--ink); border-bottom: 0.75pt solid var(--ink); }
+dl.identificativi dt { font: 600 8.5pt/1.75 "Source Sans 3", sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--quiet); break-after: avoid; }
+dl.identificativi dd { margin: 0; font-weight: 600; text-align: left; hyphens: manual; }
+
+/* The table: a caption that never parts from its table, figures aligned on the comma, totals ruled off. */
+figure.quadro { margin: 6mm 0 4mm; }
+figure.quadro figcaption { font: 600 10pt/1.3 "Source Sans 3", sans-serif; margin-bottom: 2.5mm; break-after: avoid; }
+table { border-collapse: collapse; width: 100%; font: 400 9pt/1.3 "Source Sans 3", sans-serif; }
+thead th { font-weight: 600; text-align: right; vertical-align: bottom; padding: 1.5mm 0 1.5mm 3mm; border-top: 1pt solid var(--ink); border-bottom: 0.5pt solid var(--ink); hyphens: manual; }
+thead th:first-child { text-align: left; padding-left: 0; }
+tbody th { font-weight: 400; text-align: left; vertical-align: top; padding: 1.4mm 3mm 1.4mm 0; hyphens: manual; }
+tbody td { text-align: right; vertical-align: bottom; padding: 1.4mm 0 1.4mm 3mm; font-variant-numeric: tabular-nums lining-nums; white-space: nowrap; }
+tbody tr { break-inside: avoid; border-bottom: 0.25pt solid var(--rule); }
+tbody tr.totale { border-top: 0.75pt solid var(--ink); border-bottom: 1pt solid var(--ink); }
+tbody tr.totale th, tbody tr.totale td { font-weight: 700; }
+col.voce { width: 30%; }
+
+/* The resolution: its verb set apart, then the clauses, numbered as list items with the number hung outside the measure. */
+h2.delibera { font: 600 12pt/1.3 "Source Serif 4", serif; letter-spacing: 0.3em; text-align: center; margin: 9mm 0 5mm; break-after: avoid; }
+ol.dispositivo { list-style: decimal outside; margin: 0; padding: 0 0 0 8mm; }
+ol.dispositivo > li { margin-bottom: 3mm; padding-left: 1mm; text-align: justify; orphans: 3; widows: 3; }
+ol.dispositivo > li::marker { font-weight: 600; }
+
+/* The signatures: two roles side by side, kept together and on the page of the last clause. */
+.firme { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20mm; margin-top: 16mm; break-inside: avoid; break-before: avoid; text-align: center; font-size: 10pt; }
+.firma .ruolo { font-weight: 600; }
+.firma .riga { border-bottom: 0.5pt solid var(--ink); height: 12mm; margin: 0 6mm; }
