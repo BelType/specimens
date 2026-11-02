@@ -6,12 +6,13 @@ The documents every BelType interface is shown and tested on. A specimen is a fi
 import { specimens, specimen } from '@beltype/specimens';
 
 specimen('paper').entry; // absolute path of specimens/paper/index.html
-specimens.map((s) => s.name); // ['paper']
+specimens.map((s) => s.name); // ['paper', 'trattato']
 ```
 
 | Name | Title | Exercises |
 | :--- | :--- | :--- |
 | `paper` | A scientific article (A4, invented data) | `@page` size and margins, `@page :first`, margin boxes, `string-set` and `string()`, `counter(page)`, counters, `target-counter()`, `hyphens: auto`, orphans and widows, `break-inside: avoid`, a table, inline SVG, `@font-face` woff2 |
+| `trattato` | A book: the consolidated Treaty establishing the European Community (2002), in Italian, 156 × 234 mm | `@page :left`, `:right`, `:first` and `:blank`, named pages, margin boxes on three sides, `string-set` and `string()` with `start`, `counter(page)`, nested counters, `target-counter()` for pages and for author counters, `break-before: right` and `break-after: right`, `break-inside: avoid`, orphans and widows, `hyphens: auto` with `lang="it"`, small capitals and old-style figures, a variable `@font-face` with an optical-size axis |
 
 ## Adding one
 
