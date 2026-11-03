@@ -1,27 +1,30 @@
-// The folder is the repo's real product: this test holds the list to the folders, and each folder to itself.
+// The folders are the repo's real product: this test holds each list to its folders, and each folder to itself.
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { specimens, specimen } from '../src/index.ts';
+import { specimens, specimen, cases, testCase } from '../src/index.ts';
 
-const root = new URL('../specimens/', import.meta.url).pathname;
+const root = new URL('../', import.meta.url).pathname;
+const all = [...specimens, ...cases];
 
 const walk = (dir: string): string[] => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)]));
 
-test('every listed specimen has its folder and index.html, and every folder is listed', () => {
-  for (const s of specimens) {
+test('every listed specimen and case has its folder and index.html, and every folder is listed', () => {
+  for (const s of all) {
     assert.ok(fs.statSync(s.dir).isDirectory(), `${s.name} has a folder`);
     assert.ok(fs.statSync(s.entry).isFile(), `${s.name} has an index.html`);
     assert.ok(s.exercises.length > 0, `${s.name} lists what it exercises`);
   }
-  const folders = fs.readdirSync(root, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name).sort();
-  assert.deepEqual(folders, specimens.map((s) => s.name).sort());
+  const folders = (kind: string) => fs.readdirSync(path.join(root, kind), { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name).sort();
+  assert.deepEqual(folders('specimens'), specimens.map((s) => s.name).sort());
+  assert.deepEqual(folders('cases'), cases.map((c) => c.name).sort());
+  for (const c of cases) assert.ok(c.expects.length > 0, `${c.name} says what a correct print shows`);
 });
 
 test('the closure: every reference stays inside the specimen own folder', () => {
-  for (const s of specimens) {
+  for (const s of all) {
     for (const file of walk(s.dir).filter((f) => /\.(html|css)$/.test(f))) {
       const text = fs.readFileSync(file, 'utf8');
       const refs: string[] = [];
@@ -41,7 +44,7 @@ test('the closure: every reference stays inside the specimen own folder', () => 
 });
 
 test('every font file has a licence file beside it', () => {
-  for (const s of specimens) {
+  for (const s of all) {
     for (const font of walk(s.dir).filter((f) => /\.(woff2?|ttf|otf)$/.test(f))) {
       const licences = fs.readdirSync(path.dirname(font)).filter((n) => /^(OFL|LICEN[CS]E)/i.test(n));
       assert.ok(licences.length > 0, `no licence beside ${path.relative(root, font)}`);
@@ -52,4 +55,6 @@ test('every font file has a licence file beside it', () => {
 test('an unknown name is refused, naming the known ones', () => {
   assert.equal(specimen('paper').name, 'paper');
   assert.throws(() => specimen('nope'), /paper/);
+  assert.equal(testCase('matrice-2d').name, 'matrice-2d');
+  assert.throws(() => testCase('nope'), /contatori-a-zero/);
 });

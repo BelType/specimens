@@ -1,0 +1,3 @@
+Matrice 2D (matrice-2d.ttf) was built by the tester who reported this case, for their own test documents, and is contributed to BelType specimens with their permission under this repository's MIT licence (see LICENSE at the repository root).
+
+It holds 16 glyphs, one per hexadecimal digit, for two-dimensional codes.

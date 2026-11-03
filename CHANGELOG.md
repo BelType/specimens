@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- **`cases/`**, a second kind beside the specimens: reduced test cases, one defect each, with `cases` and `testCase(name)` and an `expects` on each saying what a correct print shows. The test holds them to the same rules as the specimens.
+- **The first five cases**, moved byte for byte from a tester's report of 2026-11-03 against the published cli 0.1.3, only each entry renamed to `index.html`: `contatori-a-zero`, `font-senza-nome-postscript`, `url-in-media-print`, `matrice-2d` and `elemento-personalizzato`. Liberation Mono comes with its OFL; the two barcode fonts are the tester's, contributed under this repository's MIT licence.
+
 ## 0.1.0 — 2026-10-30
 
 - **`paper`**, a short scientific article on A4, moved byte for byte from the cli's `samples/paper/` at v0.1.1, with its three woff2 fonts and their OFL licences.
