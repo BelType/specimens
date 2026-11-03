@@ -1,21 +1,21 @@
-/* An exhibition leaflet on A4: a cover drawn in gradients and shadows around a downloaded SVG flag, then two pages of cards, flags drawn in CSS, an inline SVG diagram with its own filter, a pull quote and a colophon. Every colour is printed: print-color-adjust is exact. */
+/* An exhibition leaflet on A4: a cover drawn in gradients and shadows around a downloaded SVG map, then pages of cards, three coins drawn in CSS, an inline SVG section of a Roman road with its own filter, the map again, a pull quote and a colophon. Every colour is printed: print-color-adjust is exact. */
 
 @font-face { font-family: "Source Sans 3"; src: url("fonts/SourceSans3-Variable.woff2") format("woff2"); font-weight: 200 900; font-style: normal; }
 @font-face { font-family: "Source Serif 4"; src: url("fonts/SourceSerif4-Variable.woff2") format("woff2"); font-weight: 200 900; font-style: normal; }
 
-:root { --ink: #1b1d24; --quiet: #5b6070; --night: #12203f; --yellow: #ffd100; --blue: #034ea2; --red: #ed1c24; --paper: #fbf8f1; }
+:root { --ink: #1f1a17; --quiet: #6a5f55; --porphyry: #3d0f24; --purple: #6b1d3f; --gold: #d9a227; --red: #9e2a1f; --paper: #faf6ee; }
 
 @page {
   size: A4;
   margin: 22mm 20mm 24mm;
   background: var(--paper);
-  @bottom-left { content: "Tre colori sulle Ande"; font: 500 8pt "Source Sans 3"; color: var(--quiet); }
+  @bottom-left { content: "Ai confini del mondo"; font: 500 8pt "Source Sans 3"; color: var(--quiet); }
   @bottom-right { content: counter(page) " / " counter(pages); font: 600 8pt "Source Sans 3"; color: var(--quiet); }
 }
 /* The cover is drawn to the paper's edge, so its page has no margin and no folio. */
 @page :first {
   margin: 0;
-  background: var(--night);
+  background: var(--porphyry);
   @bottom-left { content: none; }
   @bottom-right { content: none; }
 }
@@ -23,80 +23,88 @@
 html { font: 400 10.5pt/1.5 "Source Sans 3", sans-serif; color: var(--ink); hyphens: auto; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 body { margin: 0; }
 p { margin: 0 0 3mm; orphans: 3; widows: 3; }
-h2 { font: 700 19pt/1.15 "Source Serif 4", serif; margin: 0 0 4mm; color: var(--night); break-after: avoid; }
+h2 { font: 700 19pt/1.15 "Source Serif 4", serif; margin: 0 0 4mm; color: var(--purple); break-after: avoid; }
 h3 { font: 700 11pt/1.25 "Source Sans 3", sans-serif; margin: 0 0 2mm; break-after: avoid; }
 
-/* The cover: a night sky in three layered gradients, the title lit by its own shadow, the flag pinned at a tilt. */
+/* The cover: porphyry under three layered gradients, the title lit by its own shadows, the map pinned at a tilt. */
 .copertina {
   position: relative; box-sizing: border-box; width: 210mm; height: 297mm; overflow: hidden; padding: 30mm 22mm 0; color: #fff; break-after: page;
   background:
-    radial-gradient(circle at 78% 18%, rgba(255, 209, 0, 0.55) 0, rgba(255, 209, 0, 0) 32mm),
-    conic-gradient(from 200deg at 50% 120%, #0b1530, #1f3a7a, #5b2a6e, #0b1530),
-    linear-gradient(#0b1530, #12203f);
+    radial-gradient(circle at 80% 16%, rgba(217, 162, 39, 0.55) 0, rgba(217, 162, 39, 0) 34mm),
+    conic-gradient(from 160deg at 50% 125%, #2a0918, #6b1d3f, #9e2a1f, #2a0918),
+    linear-gradient(#2a0918, #3d0f24);
 }
-.copertina .occhiello { font: 600 9pt/1 "Source Sans 3"; letter-spacing: 0.32em; text-transform: uppercase; color: var(--yellow); }
-.copertina h1 { font: 800 46pt/0.98 "Source Serif 4", serif; margin: 6mm 0 5mm; text-shadow: 0 1.5mm 0 rgba(0, 0, 0, 0.35), 0 0 9mm rgba(255, 209, 0, 0.45); }
-.copertina .sottotitolo { font: 400 14pt/1.35 "Source Serif 4", serif; max-width: 120mm; opacity: 0.88; }
-.copertina .bandiera {
-  position: absolute; left: 34mm; top: 132mm; width: 142mm; transform: rotate(-4deg);
-  border: 3mm solid #fff; border-radius: 1mm;
+.copertina .occhiello { font: 600 9pt/1 "Source Sans 3"; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); }
+.copertina h1 { font: 800 46pt/0.98 "Source Serif 4", serif; margin: 6mm 0 5mm; text-shadow: 0 1.5mm 0 rgba(0, 0, 0, 0.35), 0 0 9mm rgba(217, 162, 39, 0.5); }
+.copertina .sottotitolo { font: 400 14pt/1.35 "Source Serif 4", serif; max-width: 125mm; opacity: 0.88; }
+.copertina .mappa {
+  position: absolute; left: 24mm; top: 112mm; width: 160mm; margin: 0; transform: rotate(-3deg);
+  border: 3mm solid #fff; border-radius: 1mm; background: #fff;
   box-shadow: 0 2mm 3mm rgba(0, 0, 0, 0.35), 0 10mm 22mm rgba(0, 0, 0, 0.55);
 }
-.copertina .bandiera img { display: block; width: 100%; height: auto; }
-/* The badge: a sun in a radial gradient, sunk by an inset shadow, stuck over the flag's corner. */
+.copertina .mappa img { display: block; width: 100%; height: auto; }
+/* The badge: a gold seal in a radial gradient, sunk by an inset shadow, stuck over the map's corner. */
 .copertina .bollo {
-  position: absolute; z-index: 1; right: 22mm; top: 120mm; width: 36mm; height: 36mm; border-radius: 50%; transform: rotate(8deg);
+  position: absolute; z-index: 1; right: 16mm; top: 100mm; width: 36mm; height: 36mm; border-radius: 50%; transform: rotate(8deg);
   display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-  background: radial-gradient(circle at 35% 30%, #fff6c2, var(--yellow) 45%, #c99a00);
-  box-shadow: inset 0 -1.5mm 3mm rgba(120, 70, 0, 0.45), 0 3mm 6mm rgba(0, 0, 0, 0.4);
-  color: var(--night); font: 700 9pt/1.2 "Source Sans 3";
+  background: radial-gradient(circle at 35% 30%, #fff1c4, var(--gold) 45%, #8a5f0c);
+  box-shadow: inset 0 -1.5mm 3mm rgba(90, 50, 0, 0.5), 0 3mm 6mm rgba(0, 0, 0, 0.4);
+  color: var(--porphyry); font: 700 9pt/1.2 "Source Sans 3";
 }
 .copertina .bollo strong { font: 800 20pt/1 "Source Serif 4"; }
 /* The ribbon at the foot: a band cut to a point by clip-path, striped by a repeating gradient. */
 .copertina .nastro {
-  position: absolute; left: 0; bottom: 26mm; width: 150mm; padding: 6mm 30mm 6mm 22mm; box-sizing: border-box;
+  position: absolute; left: 0; bottom: 24mm; width: 158mm; padding: 6mm 30mm 6mm 22mm; box-sizing: border-box;
   clip-path: polygon(0 0, 100% 0, calc(100% - 12mm) 50%, 100% 100%, 0 100%);
-  background: repeating-linear-gradient(135deg, var(--red) 0 4mm, #d0141c 4mm 8mm);
-  font: 600 11pt/1.35 "Source Sans 3"; color: #fff; text-shadow: 0 0.4mm 0.6mm rgba(0, 0, 0, 0.4);
+  background: repeating-linear-gradient(135deg, var(--gold) 0 4mm, #c48f1a 4mm 8mm);
+  font: 700 11pt/1.35 "Source Sans 3"; color: var(--porphyry); text-shadow: 0 0.4mm 0 rgba(255, 255, 255, 0.45);
 }
 
 /* The inside pages. */
-.lead { font: 400 13pt/1.45 "Source Serif 4", serif; color: var(--night); margin-bottom: 6mm; }
+.lead { font: 400 13pt/1.45 "Source Serif 4", serif; color: var(--porphyry); margin-bottom: 6mm; }
 
-/* The cards: rounded, lifted by two shadows, each headed by a band in one of the flag's colours. */
+/* The cards: rounded, lifted by two shadows, each headed by a band in its own colour. */
 .schede { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6mm; margin: 6mm 0 8mm; }
-.scheda { background: #fff; border-radius: 3mm; overflow: hidden; break-inside: avoid; box-shadow: 0 0.4mm 0.8mm rgba(18, 32, 63, 0.18), 0 3mm 8mm rgba(18, 32, 63, 0.14); }
-.scheda h3 { margin: 0; padding: 3mm 4mm; color: #fff; background: linear-gradient(90deg, var(--blue), #2a77c9); }
-.scheda:nth-child(2) h3 { background: linear-gradient(90deg, #b8860b, var(--yellow)); color: var(--night); }
-.scheda:nth-child(3) h3 { background: linear-gradient(90deg, #a5101a, var(--red)); }
-.scheda:nth-child(4) h3 { background: linear-gradient(90deg, var(--night), #3b4f87); }
+.scheda { background: #fff; border-radius: 3mm; overflow: hidden; break-inside: avoid; box-shadow: 0 0.4mm 0.8mm rgba(61, 15, 36, 0.18), 0 3mm 8mm rgba(61, 15, 36, 0.14); }
+.scheda h3 { margin: 0; padding: 3mm 4mm; color: #fff; background: linear-gradient(90deg, var(--purple), #9a3b66); }
+.scheda:nth-child(2) h3 { background: linear-gradient(90deg, #8a5f0c, var(--gold)); color: var(--porphyry); }
+.scheda:nth-child(3) h3 { background: linear-gradient(90deg, #6e1a12, var(--red)); }
+.scheda:nth-child(4) h3 { background: linear-gradient(90deg, #2f3a2a, #5a6b4a); }
 .scheda p { margin: 3mm 4mm 4mm; font-size: 9.5pt; }
 
-/* The three sister flags, drawn by gradients with hard stops, laid like cards on a table. */
-.sorelle { display: flex; justify-content: center; gap: 10mm; margin: 6mm 0 3mm; break-inside: avoid; }
-.sorelle figure { margin: 0; text-align: center; font: 600 8.5pt/1.3 "Source Sans 3"; color: var(--quiet); }
-.sorelle .drappo { width: 42mm; height: 28mm; margin-bottom: 3mm; box-shadow: 0 1mm 1.5mm rgba(0, 0, 0, 0.2), 0 4mm 8mm rgba(0, 0, 0, 0.15); }
-.sorelle figure:nth-child(1) .drappo { transform: rotate(-3deg); background: linear-gradient(var(--yellow) 0 50%, var(--blue) 50% 75%, var(--red) 75%); }
-.sorelle figure:nth-child(2) .drappo { background: linear-gradient(#fcd116 0 50%, #003893 50% 75%, #ce1126 75%); }
-.sorelle figure:nth-child(3) .drappo { transform: rotate(3deg); background: linear-gradient(#ffcc00 0 33.333%, #00247d 33.333% 66.667%, #cf142b 66.667%); }
+/* Three coins drawn in CSS: a metal in a radial gradient, a milled rim in a repeating conic gradient, relief by inset shadows and embossed text. */
+.monete { display: flex; justify-content: center; gap: 12mm; margin: 6mm 0 3mm; break-inside: avoid; }
+.monete figure { margin: 0; text-align: center; font: 600 8.5pt/1.3 "Source Sans 3"; color: var(--quiet); }
+.moneta {
+  position: relative; width: 30mm; height: 30mm; margin: 0 auto 3mm; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: repeating-conic-gradient(rgba(0, 0, 0, 0.18) 0 2deg, rgba(255, 255, 255, 0.12) 2deg 4deg), var(--metallo);
+  box-shadow: 0 1mm 1.5mm rgba(0, 0, 0, 0.3), 0 4mm 8mm rgba(0, 0, 0, 0.18);
+}
+.moneta::before { content: ""; position: absolute; inset: 1.6mm; border-radius: 50%; background: var(--metallo); box-shadow: inset 0 0.6mm 1mm rgba(255, 255, 255, 0.6), inset 0 -0.8mm 1.2mm rgba(0, 0, 0, 0.35); }
+.moneta span { position: relative; font: 800 10pt/1 "Source Serif 4", serif; letter-spacing: 0.06em; color: rgba(0, 0, 0, 0.45); text-shadow: 0 0.3mm 0 rgba(255, 255, 255, 0.55), 0 -0.2mm 0 rgba(0, 0, 0, 0.3); }
+.monete figure:nth-child(1) .moneta { --metallo: radial-gradient(circle at 35% 30%, #fff3bf, #e0b23a 45%, #8f6411); transform: rotate(-6deg); }
+.monete figure:nth-child(2) .moneta { --metallo: radial-gradient(circle at 35% 30%, #ffffff, #c4c8cc 45%, #6f767d); }
+.monete figure:nth-child(3) .moneta { --metallo: radial-gradient(circle at 35% 30%, #f6dcb0, #b9894a 45%, #6a4520); transform: rotate(5deg); }
 
-/* The diagram carries its own SVG filter; the figure around it adds a CSS one. */
-figure.schema { margin: 8mm 0 6mm; break-inside: avoid; }
-figure.schema svg { display: block; width: 120mm; height: auto; margin: 0 auto; }
-figure.schema figcaption, figure.grande figcaption { font: 400 italic 9pt/1.4 "Source Serif 4", serif; color: var(--quiet); text-align: center; margin-top: 3mm; }
+/* The road section carries its own SVG filter, pattern and clip; the figure is plain. */
+figure.sezione { margin: 8mm 0 6mm; break-inside: avoid; }
+figure.sezione svg { display: block; width: 120mm; height: auto; margin: 0 auto; }
+figure.sezione figcaption, figure.grande figcaption { font: 400 italic 9pt/1.4 "Source Serif 4", serif; color: var(--quiet); text-align: center; margin-top: 3mm; }
 
-/* The flag again, large, its shadow cast by filter: drop-shadow() around the image's own outline. */
+/* The map again, large, its shadow cast by filter: drop-shadow() around the image's own outline. */
 figure.grande { margin: 4mm 0 8mm; break-inside: avoid; }
-figure.grande img { display: block; width: 150mm; height: auto; margin: 0 auto; filter: drop-shadow(0 2mm 2.5mm rgba(0, 0, 0, 0.35)); }
+figure.grande img { display: block; width: 145mm; height: auto; margin: 0 auto; filter: drop-shadow(0 2mm 2.5mm rgba(0, 0, 0, 0.35)); }
 
 /* The pull quote: pressed into the paper by two inset shadows. */
 blockquote {
   margin: 6mm 0; padding: 6mm 8mm; border-radius: 2mm; break-inside: avoid;
-  background: linear-gradient(135deg, #f1ead9, #e6dcc4);
+  background: linear-gradient(135deg, #f1e8d6, #e4d6bb);
   box-shadow: inset 0 0.8mm 2mm rgba(0, 0, 0, 0.18), inset 0 -0.4mm 0 rgba(255, 255, 255, 0.7);
-  font: 500 italic 13pt/1.4 "Source Serif 4", serif; color: var(--night);
+  font: 500 italic 13pt/1.4 "Source Serif 4", serif; color: var(--porphyry);
 }
 blockquote p { margin: 0; }
+blockquote p + p { margin-top: 2mm; font: 400 9.5pt/1.4 "Source Sans 3", sans-serif; color: var(--quiet); }
 blockquote::before { content: "\201C"; float: left; font: 800 40pt/0.8 "Source Serif 4"; margin: 1mm 3mm 0 0; color: var(--red); opacity: 0.6; }
 
-.colophon { margin-top: 10mm; padding-top: 3mm; border-top: 0.5pt solid #c9c2b1; font-size: 8pt; color: var(--quiet); }
+.colophon { margin-top: 10mm; padding-top: 3mm; border-top: 0.5pt solid #c9bea8; font-size: 8pt; color: var(--quiet); }
