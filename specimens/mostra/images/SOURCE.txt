@@ -1,9 +1,9 @@
-Flag_of_Ecuador.svg
+RomanEmpire_117_it.svg
 
-Source: https://commons.wikimedia.org/wiki/File:Flag_of_Ecuador.svg
-Original file: https://upload.wikimedia.org/wikipedia/commons/e/e8/Flag_of_Ecuador.svg
-Downloaded: 2026-11-04, 279 145 bytes, SHA-256 b6579b12e0f49555d608ee7a59e82aa932d4481af439f936bf1009e115f2d20e
+Source: https://commons.wikimedia.org/wiki/File:RomanEmpire_117_it.svg
+Original file: https://upload.wikimedia.org/wikipedia/commons/c/c7/RomanEmpire_117_it.svg
+Downloaded: 2026-11-04, 974 887 bytes, SHA-256 7a7e2db127ee8f9ea57b801d77d0ff349461c321d35c66a893b3f6169c36b5a0
 Licence: public domain, as Wikimedia Commons records it.
-Author: President of the Republic of Ecuador; first uploaded to Wikimedia Commons by Denelson83.
+Author: derivative work by TcfkaPanairjdde of File:RomanEmpire 117.svg, whose original uploader was ArdadN at en.wikipedia.
 
-The file is kept byte for byte as downloaded: 1 227 paths, linear gradients, use elements, transforms and opacity.
+The file is kept byte for byte as downloaded: 408 paths, two feGaussianBlur filters, transforms, opacity, and a legend in text set in "Liberation Sans, Arial", which an SVG in an img cannot take from the document's own @font-face.
