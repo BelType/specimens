@@ -1,0 +1,8 @@
+LiberationSans-Regular.ttf
+
+Source: https://github.com/liberationfonts/liberation-fonts, release 2.1.5 (2021-09-30)
+Archive: https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz (2 385 008 bytes, SHA-256 7191c669bf38899f73a2094ed00f7b800553364f90e2637010a69c0e268f25d0)
+Downloaded: 2026-11-04. The file is taken byte for byte from the archive: 410712 bytes, SHA-256 76d04c18ea243f426b7de1f3ad208e927008f961dc5945e5aad352d0dfde8ee8
+Licence: SIL Open Font License 1.1, in OFL-LiberationSans.txt, the archive's LICENSE.
+
+It is here for the map's legend: images/RomanEmpire_117_it.svg sets its text in "Liberation Sans, Arial", and a printer that embeds font programs needs the face as bytes.

@@ -126,6 +126,7 @@ export const specimens: readonly Specimen[] = [
     'inline SVG with patterns, use, feDropShadow, a clipPath on a curved path and gradients',
     'hyphens: auto with lang="it"',
     '@font-face woff2 variable',
+    '@font-face ttf for a family named only inside an SVG in an img',
   ]),
 ];
 
