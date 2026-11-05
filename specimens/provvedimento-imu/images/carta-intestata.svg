@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">
+  <!-- The letterhead of a notice's first page: the town's arms, a rule, and the two fold marks of a window envelope. Graphic only: an SVG used as an image cannot take the document's fonts, so the words are in the page. -->
+  <g transform="translate(14 10)">
+    <path d="M0 0h16v11c0 5.5-3.6 8.6-8 10.4C3.6 19.6 0 16.5 0 11z" fill="#1f3f8f"/>
+    <path d="M0 0h16v11c0 5.5-3.6 8.6-8 10.4C3.6 19.6 0 16.5 0 11z" fill="none" stroke="#c9a227" stroke-width="0.8"/>
+    <path d="M4 15V8h1.6v-2h1.2v2h2.4v-2h1.2v2H12v7z" fill="#f4f1e6"/>
+    <rect x="7" y="11.4" width="2" height="3.6" fill="#1f3f8f"/>
+  </g>
+  <rect x="14" y="34" width="182" height="0.35" fill="#1f3f8f"/>
+  <rect x="0" y="99" width="5" height="0.25" fill="#666"/>
+  <rect x="0" y="198" width="5" height="0.25" fill="#666"/>
+</svg>

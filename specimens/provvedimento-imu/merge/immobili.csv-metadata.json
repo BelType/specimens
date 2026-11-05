@@ -1,0 +1,198 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "immobili.csv",
+  "dialect": {
+    "delimiter": ";"
+  },
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "avviso"
+      },
+      {
+        "name": "immobile"
+      },
+      {
+        "name": "abitazione"
+      },
+      {
+        "name": "indirizzo_imm"
+      },
+      {
+        "name": "dichiarazione"
+      },
+      {
+        "name": "riga"
+      },
+      {
+        "name": "dichiarata"
+      },
+      {
+        "name": "foglio"
+      },
+      {
+        "name": "particella"
+      },
+      {
+        "name": "sub"
+      },
+      {
+        "name": "categoria"
+      },
+      {
+        "name": "classe"
+      },
+      {
+        "name": "rendita",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "valore",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "possesso",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "mesi"
+      },
+      {
+        "name": "dic_rendita"
+      },
+      {
+        "name": "dic_valore"
+      },
+      {
+        "name": "dic_possesso"
+      },
+      {
+        "name": "dic_mesi"
+      },
+      {
+        "name": "aliquota",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "aliquota_dal"
+      },
+      {
+        "name": "aliquota_al"
+      },
+      {
+        "name": "acc_lorda",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "acc_detr",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "acc_netta",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "sal_lorda",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "sal_detr",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "sal_netta",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "tot_lorda",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "tot_detr",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "tot_netta",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      }
+    ]
+  }
+}

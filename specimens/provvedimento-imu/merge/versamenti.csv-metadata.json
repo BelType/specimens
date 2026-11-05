@@ -1,0 +1,33 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "versamenti.csv",
+  "dialect": {
+    "delimiter": ";"
+  },
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "avviso"
+      },
+      {
+        "name": "rata"
+      },
+      {
+        "name": "termine"
+      },
+      {
+        "name": "data_versamento"
+      },
+      {
+        "name": "versato",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      }
+    ]
+  }
+}

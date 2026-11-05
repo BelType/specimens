@@ -1,0 +1,50 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "avvisi.csv",
+  "dialect": {
+    "delimiter": ";"
+  },
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "avviso"
+      },
+      {
+        "name": "data_atto"
+      },
+      {
+        "name": "anno"
+      },
+      {
+        "name": "esito"
+      },
+      {
+        "name": "motivazione"
+      },
+      {
+        "name": "contribuente"
+      },
+      {
+        "name": "nascita"
+      },
+      {
+        "name": "deceduto"
+      },
+      {
+        "name": "residenza"
+      },
+      {
+        "name": "codice_fiscale"
+      },
+      {
+        "name": "adesione"
+      },
+      {
+        "name": "spese"
+      },
+      {
+        "name": "funzionario"
+      }
+    ]
+  }
+}

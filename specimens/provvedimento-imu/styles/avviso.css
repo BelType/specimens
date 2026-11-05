@@ -1,0 +1,152 @@
+/* The IMU assessment notice: one sheet for the template (one notice) and the batch (a print run of many).
+   Each notice starts on a right-hand page, numbers its own pages ("Pagina 2/5"), and has a first page of its own,
+   the named page `prima`, with the letterhead and the address in the envelope window; the rest is the named page `seguito`.
+   What shows depends on the data, through selectors over a field's value: no code writes a class. */
+
+@font-face { font-family: "Liberation Sans"; src: url(../fonts/LiberationSans-Regular.ttf); font-weight: 400; }
+@font-face { font-family: "Liberation Sans"; src: url(../fonts/LiberationSans-Bold.ttf); font-weight: 700; }
+@font-face { font-family: "Liberation Mono"; src: url(../fonts/LiberationMono-Regular.ttf); }
+@font-face { font-family: "Libre Barcode 39"; src: url(../fonts/LibreBarcode39-Regular.ttf); }
+
+:root {
+  --ink: #111;
+  --band: #d6d6d6;
+  --stamp: #2340b8;
+  --rule: 0.5pt solid #111;
+  --hair: 0.3pt solid #777;
+}
+
+@page {
+  size: A4;
+  margin: 20mm 14mm 24mm;
+  @bottom-center { content: element(piede); width: 182mm; vertical-align: top; }
+}
+@page prima {
+  margin-top: 12mm;
+  background: url(../images/carta-intestata.svg) no-repeat 0 0 / 210mm 297mm;
+}
+@page seguito {
+  @top-left { content: "Comune di Borgo Esempio · Servizio Entrate"; font: 7pt "Liberation Sans"; color: #555; vertical-align: bottom; }
+  @top-right { content: string(tributo); font: 7pt "Liberation Sans"; color: #555; vertical-align: bottom; }
+}
+@page :blank {
+  @top-center { content: "Pagina lasciata intenzionalmente bianca"; font: italic 8pt "Liberation Sans"; color: #555; }
+  @bottom-center { content: none; }
+}
+
+html { font: 8.5pt/1.3 "Liberation Sans", sans-serif; color: var(--ink); }
+body { margin: 0; }
+p, ul, dl, h1, h2, h3 { margin: 0; }
+
+/* One notice: a right-hand start, and a page count of its own. */
+.avviso { page: prima; break-before: recto; counter-reset: page 1; }
+.prima { position: relative; }
+.seguito { page: seguito; }
+
+/* The foot of every page of a notice: its number and date, the delivery ID as a Code 39 barcode, the page of the notice. */
+.piede { position: running(piede); width: 182mm; display: flex; justify-content: space-between; align-items: flex-start; font: italic 7.5pt "Liberation Sans"; }
+.piede .codice { text-align: center; font-style: normal; }
+.piede .barre { display: block; font: 26pt/1 "Libre Barcode 39"; }
+.piede .barre::before, .piede .barre::after { content: "*"; }
+.piede .did { display: block; font: 7pt "Liberation Mono"; letter-spacing: 0.08em; }
+.piede .pagina { color: inherit; text-decoration: none; }
+.piede .pagina::after { content: " " counter(page) "/" target-counter(attr(href url), page); }
+
+/* The first page. */
+.intestazione { margin-left: 22mm; height: 22mm; }
+.intestazione .comune { font-size: 13pt; font-weight: 700; letter-spacing: 0.02em; padding-top: 1mm; }
+.intestazione p:not(.comune) { font-size: 7.5pt; color: #333; }
+
+.protocollo { width: 80mm; display: grid; grid-template-columns: 1fr 7mm; border: 0.6pt solid var(--stamp); color: var(--stamp); font: 7.5pt/1.35 "Liberation Mono", monospace; text-transform: uppercase; }
+.protocollo p { padding: 0.4mm 1.5mm; }
+.protocollo .verso { grid-row: 1; grid-column: 2; border-left: 0.6pt solid var(--stamp); font: 13pt/1 "Liberation Sans"; text-align: center; }
+.protocollo .ente { grid-column: 1; border-bottom: 0.6pt solid var(--stamp); }
+.protocollo .copia, .protocollo .numero-protocollo { grid-column: 1 / -1; }
+.protocollo .copia { border-bottom: 0.3pt solid var(--stamp); text-align: center; }
+
+.estremi-atto { width: 76mm; margin-top: 4mm; padding: 2mm 2.5mm 4mm; border: var(--rule); box-shadow: 1.2mm 1.2mm 0 #9a9a9a; }
+.estremi-atto .tributo { margin-top: 3mm; font-size: 12pt; font-weight: 700; text-transform: uppercase; text-align: center; line-height: 1.2; }
+
+/* The window of a DL envelope, the sheet folded in three: 50 mm from the top edge, 110 mm from the left. */
+.destinatario { position: absolute; top: 38mm; left: 96mm; width: 82mm; height: 30mm; font: normal 10pt/1.25 "Liberation Mono", monospace; text-transform: uppercase; }
+.destinatario span { display: block; }
+.destinatario span:empty { display: none; }
+
+h1 { margin: 12mm 0 2mm; font-size: 14pt; font-weight: 400; text-align: center; text-transform: uppercase; }
+.contribuente { display: grid; grid-template-columns: 30mm 1fr; column-gap: 1.5mm; row-gap: 1mm; padding: 1.5mm 2mm; border: var(--rule); }
+.contribuente dt { font-weight: 700; text-align: right; }
+.contribuente dt::after { content: ":"; }
+.contribuente dd { margin: 0; text-transform: uppercase; }
+
+.eredi { margin-top: 3mm; }
+.eredi h2 { font-size: 8.5pt; text-transform: uppercase; }
+.eredi ul { padding-left: 4mm; }
+
+.funzionario { margin-top: 4mm; font-weight: 700; text-align: center; font-size: 9.5pt; }
+.visti { list-style: none; padding: 0; margin-top: 1.5mm; }
+.visti b { font-weight: 400; text-transform: uppercase; }
+.accerta { margin: 3mm 0 1mm; font-size: 12pt; text-align: center; text-transform: uppercase; }
+.motivo em { font-weight: 700; }
+
+/* The rest of the notice. */
+.banda, caption { background: var(--band); font-weight: 700; text-transform: uppercase; }
+.banda { margin-bottom: 3mm; padding: 1mm 2mm; font-size: 10pt; text-align: center; }
+caption { caption-side: top; padding: 0.8mm 1.5mm; text-align: left; font-size: 8pt; border: var(--rule); border-bottom: 0; }
+
+table { width: 100%; border-collapse: collapse; font-size: 7.5pt; margin-bottom: 4mm; }
+th, td { padding: 0.5mm 1.2mm; border: var(--hair); vertical-align: top; }
+thead th { font-weight: 400; text-align: center; vertical-align: bottom; line-height: 1.15; }
+tbody th { font-weight: 400; text-align: left; }
+.num, td:has(> data) { text-align: right; font-variant-numeric: tabular-nums; }
+table { border: var(--rule); }
+
+.quadro { break-inside: avoid; margin-bottom: 5mm; }
+.quadro table { margin-bottom: 1mm; }
+.quadro .dichiarazione { font-size: 7.5pt; margin-bottom: 0.8mm; }
+.quadro .dichiarazione:has(> span:empty) { display: none; }
+.quadro caption { text-transform: none; font-weight: 400; }
+.quadro caption [itemprop="immobile"] { font-weight: 700; }
+.quadro caption .indirizzo { margin-left: 6mm; }
+.quadro .abitazione:empty { display: none; }
+.imposta td { text-align: right; }
+.imposta .totale { font-weight: 700; }
+.aliquota { padding-left: 4mm; font-size: 7.5pt; }
+.vh { position: absolute; clip-path: inset(50%); width: 1px; height: 1px; overflow: hidden; white-space: nowrap; }
+
+.versamenti .nessuno { margin: -3mm 0 4mm; padding: 0.6mm 1.5mm; border: var(--rule); border-top: 0; font-style: italic; }
+.scorta { margin-bottom: 1.5mm; }
+.riepilogo-imposta td { width: 22mm; text-align: right; }
+.riepilogo-imposta tbody th { text-align: right; }
+.somma, tfoot, .importo { font-weight: 700; }
+.somma th, .somma td, tfoot th, tfoot td { border-top: var(--rule); }
+tfoot th { text-align: right; }
+
+.riepilogo-avviso td:nth-child(2) { width: 6mm; text-align: center; }
+.riepilogo-avviso td:last-child { width: 26mm; text-align: right; }
+.riepilogo-avviso .importo th, .riepilogo-avviso .importo td { border-top: var(--rule); font-size: 9pt; }
+
+.adesione > p { margin: 2mm 0 1.5mm; font-size: 9pt; }
+.avvertenze { margin-top: 3mm; }
+.avvertenze h3 { margin: 2.5mm 0 0.8mm; font-size: 8pt; text-transform: uppercase; break-after: avoid; }
+.avvertenze p { text-align: justify; hyphens: auto; orphans: 3; widows: 3; }
+
+/* The signature stays with the last paragraph: no page holds it alone. */
+.firma { break-before: avoid; break-inside: avoid; display: grid; grid-template-columns: 1fr 1fr; margin-top: 6mm; row-gap: 2mm; }
+.firma .chi { text-align: center; }
+.firma .nota, .firma .fantasia { grid-column: 1 / -1; font-size: 7pt; color: #444; }
+
+/* What the data turns on and off. */
+.avviso:has(> data[itemprop="esito"][value="rimborso"]) .solo-accertamento,
+.avviso:not(:has(> data[itemprop="esito"][value="rimborso"])) .solo-rimborso { display: none; }
+.avviso:not(:has(> data[itemprop="adesione"][value="si"])) .adesione { display: none; }
+.sanzioni:not(:has(tbody > tr[itemprop])),
+.interessi:not(:has(tbody > tr[itemprop])),
+.eredi:not(:has(li[itemprop])) { display: none; }
+.versamenti:has(tbody > tr[itemprop]) .nessuno { display: none; }
+.deceduto:has(> [itemprop="deceduto"]:empty) { display: none; }
+tr.dic:has(data[itemprop="dichiarata"][value="no"]) { display: none; }
+tr:has(data[itemprop="quota"][value="Acconto"]) + tr:has(data[itemprop="quota"][value="Acconto"]) span[itemprop="quota"],
+tr:has(data[itemprop="quota"][value="Saldo"]) + tr:has(data[itemprop="quota"][value="Saldo"]) span[itemprop="quota"] { visibility: hidden; }
+
+/* The running header's string. */
+.estremi-atto .tributo { string-set: tributo content(text); }

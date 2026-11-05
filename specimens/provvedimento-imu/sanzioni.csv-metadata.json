@@ -1,0 +1,54 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "sanzioni.csv",
+  "dialect": {
+    "delimiter": ";"
+  },
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "violazione"
+      },
+      {
+        "name": "percentuale",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "imponibile",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "sanzione",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "ridotta",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      }
+    ]
+  }
+}

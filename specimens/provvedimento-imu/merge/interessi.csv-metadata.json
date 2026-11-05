@@ -1,0 +1,56 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "interessi.csv",
+  "dialect": {
+    "delimiter": ";"
+  },
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "avviso"
+      },
+      {
+        "name": "quota"
+      },
+      {
+        "name": "su_importo",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "dal"
+      },
+      {
+        "name": "al"
+      },
+      {
+        "name": "giorni"
+      },
+      {
+        "name": "tasso",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "interesse",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      }
+    ]
+  }
+}
