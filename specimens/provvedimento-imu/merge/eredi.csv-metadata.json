@@ -1,0 +1,23 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "eredi.csv",
+  "dialect": {
+    "delimiter": ";"
+  },
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "avviso"
+      },
+      {
+        "name": "erede"
+      },
+      {
+        "name": "cf_erede"
+      },
+      {
+        "name": "residenza_erede"
+      }
+    ]
+  }
+}

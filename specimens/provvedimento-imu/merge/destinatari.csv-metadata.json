@@ -1,0 +1,35 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "destinatari.csv",
+  "dialect": {
+    "delimiter": ";"
+  },
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "avviso"
+      },
+      {
+        "name": "destinatario"
+      },
+      {
+        "name": "presso"
+      },
+      {
+        "name": "via"
+      },
+      {
+        "name": "localita"
+      },
+      {
+        "name": "protocollo"
+      },
+      {
+        "name": "data_protocollo"
+      },
+      {
+        "name": "did"
+      }
+    ]
+  }
+}

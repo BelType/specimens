@@ -1,0 +1,8 @@
+LibreBarcode39-Regular.ttf
+
+Source: https://github.com/google/fonts, ofl/librebarcode39/LibreBarcode39-Regular.ttf, last changed in commit 9afc75e55b992c9fe5fbe2589b1b9a39357faddc (2021-02-03)
+Project: https://github.com/graphicore/librebarcode
+Downloaded: 2026-11-05, 14 800 bytes, SHA-256 0c8907f28765e6f021f3a910d193e4e02f518065fbdcbbc777c1958728bcc6a5
+Licence: SIL Open Font License 1.1, in OFL-LibreBarcode39.txt, the repository's OFL.txt.
+
+Code 39 needs no check digit: the delivery ID between two asterisks, set in this face, is the barcode. The stylesheet adds the asterisks, so the merge writes the ID as text and computes nothing.

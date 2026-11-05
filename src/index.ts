@@ -147,6 +147,27 @@ export const specimens: readonly Specimen[] = [
     'data elements: a typed value and its text',
     '@font-face woff2 variable',
   ]),
+  make('provvedimento-imu', 'A mail-merge template: a municipal tax assessment, with its merged print run of four notices in five copies', [
+    'named pages: page on an element, @page prima and @page seguito',
+    'break-before: recto and @page :blank with a margin box',
+    'counter-reset: page on an element, to number each notice on its own',
+    'target-counter() on a link inside a running element, for each notice its own total',
+    'position: running() and element() with a different element for each notice',
+    'string-set: content(text) and string()',
+    '@page background: an SVG image on the named page',
+    'position: absolute in millimetres, for an envelope window',
+    'box-shadow',
+    'display: grid and display: flex',
+    ':has() over a value the data carries, to show or hide whole sections',
+    ':empty, and tr:has() + tr:has() to blank a repeated value',
+    'break-inside: avoid, break-before: avoid, orphans and widows',
+    'tables: colspan, rowspan, scope, caption, tfoot, several tbody fields per row, over a page break',
+    'microdata: itemscope, itemid, itemprop, one value in several fields',
+    'a JSON-LD data block with seventeen XForms binds in XPath 3.1, summing five tables',
+    'template data-repeat over five CSVs described by CSVW metadata, one of them drawn twice',
+    'data elements: a typed value and its text, a flag with no text',
+    '@font-face ttf: Liberation Sans, Liberation Mono, and Libre Barcode 39 for a barcode set as text',
+  ]),
 ];
 
 // From a tester's print of administrative documents with the published cli 0.1.3, on 2026-11-03.

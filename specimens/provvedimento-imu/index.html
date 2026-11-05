@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>Avviso di accertamento IMU</title>
+  <link rel="stylesheet" href="styles/avviso.css">
+</head>
+<body>
+<article class="avviso" id="avviso" itemscope itemid="#avviso" itemtype="https://schema.org/CreativeWork">
+<data itemprop="esito" value="accertamento"></data><data itemprop="adesione" value="si"></data>
+
+<footer class="piede">
+  <p class="estremi">N. <span itemprop="avviso">1</span> del <span itemprop="data_atto">12/07/2024</span></p>
+  <p class="codice"><span class="barre" aria-hidden="true" itemprop="did">AV24000101</span><span class="did" itemprop="did">AV24000101</span></p>
+  <p class="numero"><a class="pagina" href="#fine">Pagina</a></p>
+</footer>
+
+<section class="prima">
+  <header class="intestazione">
+    <p class="comune">Comune di Borgo Esempio</p>
+    <p>Provincia di Esempio · Servizio Entrate, Ufficio Tributi</p>
+  </header>
+  <div class="protocollo">
+    <p class="ente">Comune di Borgo Esempio</p>
+    <p class="verso" title="In uscita">U</p>
+    <p class="copia">Copia cartacea di originale analogico</p>
+    <p class="numero-protocollo">Protocollo N. <span itemprop="protocollo">0000101</span> del <span itemprop="data_protocollo">15/07/2024</span></p>
+  </div>
+  <div class="estremi-atto">
+    <p>Provvedimento N. <span itemprop="avviso">1</span> del <span itemprop="data_atto">12/07/2024</span></p>
+    <p class="tributo">Imposta municipale propria – I.M.U. <span class="anno" itemprop="anno">2021</span></p>
+  </div>
+  <address class="destinatario">
+    <span itemprop="destinatario">CAMPIONE ANNA</span>
+    <span class="presso" itemprop="presso"></span>
+    <span itemprop="via">VIA DEI TIGLI 8</span>
+    <span itemprop="localita">00010 BORGO ESEMPIO XX</span>
+  </address>
+
+  <h1><span class="solo-accertamento">Accertamento esecutivo</span><span class="solo-rimborso">Provvedimento di rimborso</span></h1>
+  <dl class="contribuente">
+    <dt>Contribuente</dt><dd><span itemprop="contribuente">CAMPIONE ANNA</span> <span itemprop="nascita">nata il 14/05/1968 a BORGO ESEMPIO (XX)</span><span class="deceduto"> – deceduto il <span itemprop="deceduto"></span></span></dd>
+    <dt>Residente in</dt><dd><span itemprop="residenza">VIA DEI TIGLI 8 - 00010 BORGO ESEMPIO XX</span></dd>
+    <dt>Codice fiscale</dt><dd><span itemprop="codice_fiscale">CMPNNA68E54Z999K</span></dd>
+  </dl>
+
+  <section class="eredi">
+    <h2>Eredi</h2>
+    <ul>
+      <template data-repeat="eredi"><li><span itemprop="erede"></span>, c.f. <span itemprop="cf_erede"></span>, residente in <span itemprop="residenza_erede"></span></li></template>
+    </ul>
+  </section>
+
+  <p class="funzionario">Il funzionario responsabile per la gestione dell’imposta I.M.U.</p>
+  <ul class="visti">
+    <li><b>visto</b> il Regolamento comunale delle entrate vigente;</li>
+    <li><b>vista</b> la legge 160/2019, articolo 1, comma 792, che ha introdotto l’avviso di accertamento esecutivo;</li>
+    <li><b>visti</b> i decreti legislativi 471, 472 e 473 del 1997, sulle sanzioni amministrative per le violazioni tributarie;</li>
+    <li><b>viste</b> le dichiarazioni presentate dal contribuente in indirizzo e i versamenti eseguiti per l’anno indicato;</li>
+  </ul>
+  <h2 class="accerta"><span class="solo-accertamento">Accerta</span><span class="solo-rimborso">Liquida</span> per l’anno <span itemprop="anno">2021</span></h2>
+  <p class="motivo">nei confronti del soggetto passivo in indirizzo l’imposta dovuta per l’anno indicato, per la seguente motivazione: <em itemprop="motivazione">VERSAMENTO PARZIALE</em>.</p>
+</section>
+
+<section class="seguito">
+  <h2 class="banda">Quadri degli immobili</h2>
+  <template data-repeat="immobili"><section class="quadro">
+    <p class="dichiarazione">Dichiarazione: <span itemprop="dichiarazione"></span></p>
+    <table class="catasto">
+      <caption><span itemprop="immobile"></span> <span class="abitazione" itemprop="abitazione"></span> <span class="indirizzo">Indirizzo: <span itemprop="indirizzo_imm"></span></span></caption>
+      <thead><tr><th scope="col"><span class="vh">Fonte</span></th><th scope="col">Foglio</th><th scope="col">Particella</th><th scope="col">Sub</th><th scope="col">Categoria</th><th scope="col">Cl.</th><th scope="col" class="num">Rendita</th><th scope="col" class="num">Valore</th><th scope="col" class="num">% poss.</th><th scope="col" class="num">Mesi</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" itemprop="riga"></th><td itemprop="foglio"></td><td itemprop="particella"></td><td itemprop="sub"></td><td itemprop="categoria"></td><td itemprop="classe"></td><td class="num"><data itemprop="rendita" value=""></data></td><td class="num"><data itemprop="valore" value=""></data></td><td class="num"><data itemprop="possesso" value=""></data></td><td class="num" itemprop="mesi"></td></tr>
+        <tr class="dic"><th scope="row">Dic<data itemprop="dichiarata" value=""></data></th><td itemprop="foglio"></td><td itemprop="particella"></td><td itemprop="sub"></td><td itemprop="categoria"></td><td itemprop="classe"></td><td class="num" itemprop="dic_rendita"></td><td class="num" itemprop="dic_valore"></td><td class="num" itemprop="dic_possesso"></td><td class="num" itemprop="dic_mesi"></td></tr>
+      </tbody>
+    </table>
+    <table class="imposta">
+      <thead>
+        <tr><td rowspan="2"></td><th scope="colgroup" colspan="3">Acconto</th><th scope="colgroup" colspan="3">Saldo</th><th scope="colgroup" colspan="3" class="totale">Totale</th></tr>
+        <tr><th scope="col">Imposta lorda</th><th scope="col">Detrazione</th><th scope="col">Imposta netta</th><th scope="col">Imposta lorda</th><th scope="col">Detrazione</th><th scope="col">Imposta netta</th><th scope="col">Imposta lorda</th><th scope="col">Detrazione</th><th scope="col">Imposta netta</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row" itemprop="riga"></th><td><data itemprop="acc_lorda" value=""></data></td><td><data itemprop="acc_detr" value=""></data></td><td><data itemprop="acc_netta" value=""></data></td><td><data itemprop="sal_lorda" value=""></data></td><td><data itemprop="sal_detr" value=""></data></td><td><data itemprop="sal_netta" value=""></data></td><td><data itemprop="tot_lorda" value=""></data></td><td><data itemprop="tot_detr" value=""></data></td><td class="totale"><data itemprop="tot_netta" value=""></data></td></tr>
+      </tbody>
+    </table>
+    <p class="aliquota">Aliquota dal <span itemprop="aliquota_dal"></span> al <span itemprop="aliquota_al"></span>: <data itemprop="aliquota" value=""></data> per mille</p>
+  </section></template>
+
+  <section class="versamenti">
+    <table>
+      <caption>Dettaglio versamenti</caption>
+      <thead><tr><th scope="col">Rata</th><th scope="col">Termine di versamento</th><th scope="col">Data di versamento</th><th scope="col" class="num">Imposta versata</th></tr></thead>
+      <tbody>
+        <template data-repeat="versamenti"><tr><th scope="row" itemprop="rata"></th><td itemprop="termine"></td><td itemprop="data_versamento"></td><td class="num"><data itemprop="versato" value=""></data></td></tr></template>
+      </tbody>
+    </table>
+    <p class="nessuno">Non sono stati eseguiti versamenti.</p>
+  </section>
+
+  <p class="scorta"><span class="solo-accertamento">Sulla scorta degli elementi che precedono, si procede all’accertamento dell’imposta come segue:</span><span class="solo-rimborso">Sulla scorta degli elementi che precedono, si procede al rimborso dell’imposta come segue:</span></p>
+  <table class="riepilogo-imposta">
+    <caption>Riepilogo dell’imposta</caption>
+    <thead><tr><td></td><th scope="col">Acconto</th><th scope="col">Saldo</th><th scope="col">Totale</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Imposta determinata in liquidazione</th><td><span itemprop="dovuto_acconto">724,00</span></td><td><span itemprop="dovuto_saldo">724,00</span></td><td><span itemprop="dovuto_totale">1.448,00</span></td></tr>
+      <tr><th scope="row">Versamenti spontanei</th><td><span itemprop="versato_acconto">724,00</span></td><td><span itemprop="versato_saldo">300,00</span></td><td><span itemprop="versato_totale">1.024,00</span></td></tr>
+      <tr class="somma"><th scope="row">Differenza d’imposta</th><td><span itemprop="diff_acconto">0,00</span></td><td><span itemprop="diff_saldo">424,00</span></td><td><span itemprop="diff_totale">424,00</span></td></tr>
+    </tbody>
+  </table>
+
+  <section class="sanzioni">
+    <table>
+      <caption>Determinazione delle sanzioni amministrative</caption>
+      <thead><tr><th scope="col">Violazione</th><th scope="col" class="num">% sanzione</th><th scope="col" class="num">Imposta da sanzionare</th><th scope="col" class="num">Importo sanzione</th></tr></thead>
+      <tbody>
+        <template data-repeat="sanzioni"><tr><th scope="row" itemprop="violazione"></th><td class="num"><data itemprop="percentuale" value=""></data></td><td class="num"><data itemprop="imponibile" value=""></data></td><td class="num"><data itemprop="sanzione" value=""></data></td></tr></template>
+      </tbody>
+      <tfoot><tr><th scope="row" colspan="3">Totale sanzioni</th><td class="num"><span itemprop="tot_sanzioni">127,20</span></td></tr></tfoot>
+    </table>
+  </section>
+
+  <section class="interessi">
+    <table>
+      <caption>Determinazione degli interessi</caption>
+      <thead><tr><th scope="col">Quota</th><th scope="col" class="num">Su importo</th><th scope="col">Dal</th><th scope="col">Al</th><th scope="col" class="num">Giorni</th><th scope="col" class="num">Tasso annuo %</th><th scope="col" class="num">Interessi</th></tr></thead>
+      <tbody>
+        <template data-repeat="interessi"><tr><th scope="row"><span itemprop="quota"></span><data itemprop="quota" value=""></data></th><td class="num"><data itemprop="su_importo" value=""></data></td><td itemprop="dal"></td><td itemprop="al"></td><td class="num" itemprop="giorni"></td><td class="num"><data itemprop="tasso" value=""></data></td><td class="num"><data itemprop="interesse" value=""></data></td></tr></template>
+      </tbody>
+      <tfoot><tr><th scope="row" colspan="6">Totale interessi</th><td class="num"><span itemprop="tot_interessi">32,13</span></td></tr></tfoot>
+    </table>
+  </section>
+
+  <table class="riepilogo-avviso">
+    <caption>Riepilogo dell’avviso</caption>
+    <tbody>
+      <tr><th scope="row">Totale differenza d’imposta</th><td></td><td><span itemprop="diff_totale">424,00</span></td></tr>
+      <tr><th scope="row">Totale interessi</th><td></td><td><span itemprop="tot_interessi">32,13</span></td></tr>
+      <tr class="solo-accertamento"><th scope="row">Totale sanzioni</th><td></td><td><span itemprop="tot_sanzioni">127,20</span></td></tr>
+      <tr class="solo-accertamento"><th scope="row">Spese di notifica</th><td></td><td><span itemprop="spese">5,88</span></td></tr>
+      <tr><th scope="row">Arrotondamento</th><td></td><td><span itemprop="arrotondamento">-0,21</span></td></tr>
+      <tr class="importo solo-accertamento"><th scope="row">Importo da versare</th><td>€</td><td><span itemprop="importo">589,00</span></td></tr>
+      <tr class="importo solo-rimborso"><th scope="row">Importo totale del provvedimento</th><td>€</td><td><span itemprop="importo">589,00</span></td></tr>
+      <tr class="importo solo-rimborso"><th scope="row">Importo da rimborsare</th><td>€</td><td><span itemprop="importo_rimborso">-589,00</span></td></tr>
+    </tbody>
+  </table>
+
+  <section class="adesione">
+    <p>Si avverte che, in caso di adesione al presente provvedimento con il pagamento entro 60 giorni dalla notifica, le sanzioni amministrative sono ridotte a un terzo come segue:</p>
+    <table class="ridotte">
+      <caption>Determinazione delle sanzioni con adesione</caption>
+      <thead><tr><th scope="col">Violazione</th><th scope="col" class="num">Sanzione ridotta</th></tr></thead>
+      <tbody>
+        <template data-repeat="sanzioni"><tr><th scope="row" itemprop="violazione"></th><td class="num"><data itemprop="ridotta" value=""></data></td></tr></template>
+      </tbody>
+    </table>
+    <table class="riepilogo-avviso">
+      <caption>Riepilogo dell’avviso con adesione</caption>
+      <tbody>
+        <tr><th scope="row">Totale differenza d’imposta</th><td></td><td><span itemprop="diff_totale">424,00</span></td></tr>
+        <tr><th scope="row">Totale interessi</th><td></td><td><span itemprop="tot_interessi">32,13</span></td></tr>
+        <tr><th scope="row">Totale sanzioni con adesione</th><td></td><td><span itemprop="tot_ridotte">42,40</span></td></tr>
+        <tr><th scope="row">Spese di notifica</th><td></td><td><span itemprop="spese">5,88</span></td></tr>
+        <tr><th scope="row">Arrotondamento</th><td></td><td><span itemprop="arrotondamento_adesione">-0,41</span></td></tr>
+        <tr class="importo"><th scope="row">Importo da versare con adesione</th><td>€</td><td><span itemprop="importo_adesione">504,00</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="avvertenze">
+    <section class="solo-accertamento">
+      <h3>Intimazione ad adempiere</h3>
+      <p>Il presente avviso vale come intimazione ad adempiere: gli importi indicati nel riepilogo vanno pagati entro il termine per presentare ricorso.</p>
+      <h3>Modalità di pagamento</h3>
+      <p>Il pagamento si esegue con l’avviso pagoPA allegato, presso banche, uffici postali e gli altri prestatori aderenti, entro il termine indicato.</p>
+      <h3>Titolo esecutivo e riscossione</h3>
+      <p>Trascorso il termine per il ricorso senza pagamento, il presente atto diventa titolo esecutivo per la riscossione coattiva, secondo l’articolo 1, commi 792 e seguenti, della legge 160/2019, senza che sia notificata una cartella di pagamento. Trascorsi altri 30 giorni, la riscossione è affidata all’agente della riscossione, che ne dà comunicazione al debitore; da quel momento il pagamento si esegue presso l’agente. Alle somme affidate si applicano gli interessi di mora dalla notifica dell’atto, gli oneri di riscossione e le spese di notifica ed esecutive. In caso di fondato pericolo per la riscossione, debitamente motivato e comunicato, l’affidamento può avvenire senza attendere i 30 giorni.</p>
+    </section>
+    <section class="solo-rimborso">
+      <h3>Modalità del rimborso</h3>
+      <p>L’importo da rimborsare è accreditato sul conto corrente indicato dal contribuente o, su sua richiesta, compensato con l’imposta dovuta per gli anni successivi.</p>
+    </section>
+    <h3>Ricorso</h3>
+    <p>Contro il presente atto si può proporre ricorso alla Corte di giustizia tributaria di primo grado di Capoluogo Esempio entro 60 giorni dalla notifica, secondo il decreto legislativo 546/1992; trascorso il termine, l’atto diventa definitivo. Il ricorso si notifica con modalità telematiche all’indirizzo di posta elettronica certificata del Comune, protocollo@comune.borgoesempio.example. Chi sta in giudizio personalmente, nei limiti di valore previsti, può notificarlo anche a mezzo ufficiale giudiziario, per raccomandata con avviso di ricevimento o con consegna diretta all’ufficio. Entro 30 giorni dalla proposizione il ricorrente si costituisce in giudizio. È dovuto il contributo unificato.</p>
+    <h3>Autotutela</h3>
+    <p>Il responsabile del procedimento, presso il quale si può chiedere il riesame dell’atto in autotutela, è il funzionario che firma. L’istanza di autotutela non sospende i termini per il pagamento né per il ricorso.</p>
+    <h3>Informazioni</h3>
+    <p>Informazioni sull’atto si ottengono presso il Servizio Entrate del Comune di Borgo Esempio, che riceve su appuntamento.</p>
+  </section>
+
+  <div class="firma">
+    <p class="luogo">Borgo Esempio, <span itemprop="data_atto">12/07/2024</span></p>
+    <p class="chi">Il funzionario responsabile<br><span itemprop="funzionario">Ugo Fittizio</span></p>
+    <p class="nota">Firma autografa sostituita a mezzo stampa ai sensi dell’articolo 3, comma 2, del decreto legislativo 39/1993.</p>
+    <p class="fantasia" id="fine">Documento dimostrativo: comune, nomi, indirizzi, codici fiscali e importi sono di fantasia.</p>
+  </div>
+</section>
+</article>
+
+<script type="application/ld+json" id="__beltype-store">
+{
+  "@context": [
+    "https://schema.org/",
+    {
+      "beltype": "urn:beltype:",
+      "csvw": "http://www.w3.org/ns/csvw#",
+      "Bind": "beltype:Bind",
+      "ref": {
+        "@id": "beltype:ref",
+        "@type": "@id"
+      },
+      "property": "beltype:property",
+      "calculate": "beltype:calculate",
+      "readonly": "beltype:readonly"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "#avviso",
+      "@type": "CreativeWork",
+      "avviso": "1",
+      "data_atto": "12/07/2024",
+      "anno": "2021",
+      "esito": "accertamento",
+      "motivazione": "VERSAMENTO PARZIALE",
+      "contribuente": "CAMPIONE ANNA",
+      "nascita": "nata il 14/05/1968 a BORGO ESEMPIO (XX)",
+      "deceduto": "",
+      "residenza": "VIA DEI TIGLI 8 - 00010 BORGO ESEMPIO XX",
+      "codice_fiscale": "CMPNNA68E54Z999K",
+      "adesione": "si",
+      "spese": "5,88",
+      "funzionario": "Ugo Fittizio",
+      "destinatario": "CAMPIONE ANNA",
+      "presso": "",
+      "via": "VIA DEI TIGLI 8",
+      "localita": "00010 BORGO ESEMPIO XX",
+      "protocollo": "0000101",
+      "data_protocollo": "15/07/2024",
+      "did": "AV24000101",
+      "dovuto_acconto": "724,00",
+      "dovuto_saldo": "724,00",
+      "dovuto_totale": "1.448,00",
+      "versato_acconto": "724,00",
+      "versato_saldo": "300,00",
+      "versato_totale": "1.024,00",
+      "diff_acconto": "0,00",
+      "diff_saldo": "424,00",
+      "diff_totale": "424,00",
+      "tot_interessi": "32,13",
+      "tot_sanzioni": "127,20",
+      "tot_ridotte": "42,40",
+      "arrotondamento": "-0,21",
+      "importo": "589,00",
+      "arrotondamento_adesione": "-0,41",
+      "importo_adesione": "504,00",
+      "importo_rimborso": "-589,00",
+      "immobili": {
+        "@type": "csvw:Table",
+        "csvw:url": "immobili.csv"
+      },
+      "versamenti": {
+        "@type": "csvw:Table",
+        "csvw:url": "versamenti.csv"
+      },
+      "interessi": {
+        "@type": "csvw:Table",
+        "csvw:url": "interessi.csv"
+      },
+      "sanzioni": {
+        "@type": "csvw:Table",
+        "csvw:url": "sanzioni.csv"
+      },
+      "eredi": {
+        "@type": "csvw:Table",
+        "csvw:url": "eredi.csv"
+      }
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "dovuto_acconto",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $da := xs:integer(round(sum(?immobili?*?acc_netta))) * 100 return $f($da)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "dovuto_saldo",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $ds := xs:integer(round(sum(?immobili?*?sal_netta))) * 100 return $f($ds)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "dovuto_totale",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $da := xs:integer(round(sum(?immobili?*?acc_netta))) * 100, $ds := xs:integer(round(sum(?immobili?*?sal_netta))) * 100 return $f($da + $ds)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "versato_acconto",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $va := $c(sum(?versamenti?*[?rata eq 'Acconto']?versato)) return $f($va)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "versato_saldo",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $vs := $c(sum(?versamenti?*[?rata eq 'Saldo']?versato)) return $f($vs)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "versato_totale",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $va := $c(sum(?versamenti?*[?rata eq 'Acconto']?versato)), $vs := $c(sum(?versamenti?*[?rata eq 'Saldo']?versato)) return $f($va + $vs)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "diff_acconto",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $da := xs:integer(round(sum(?immobili?*?acc_netta))) * 100, $va := $c(sum(?versamenti?*[?rata eq 'Acconto']?versato)) return $f($da - $va)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "diff_saldo",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $ds := xs:integer(round(sum(?immobili?*?sal_netta))) * 100, $vs := $c(sum(?versamenti?*[?rata eq 'Saldo']?versato)) return $f($ds - $vs)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "diff_totale",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $da := xs:integer(round(sum(?immobili?*?acc_netta))) * 100, $ds := xs:integer(round(sum(?immobili?*?sal_netta))) * 100, $va := $c(sum(?versamenti?*[?rata eq 'Acconto']?versato)), $vs := $c(sum(?versamenti?*[?rata eq 'Saldo']?versato)) return $f($da + $ds - $va - $vs)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "tot_interessi",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $i := $c(sum(?interessi?*?interesse)) return $f($i)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "tot_sanzioni",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $s := $c(sum(?sanzioni?*?sanzione)) return $f($s)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "tot_ridotte",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $r := $c(sum(?sanzioni?*?ridotta)) return $f($r)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "arrotondamento",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $da := xs:integer(round(sum(?immobili?*?acc_netta))) * 100, $ds := xs:integer(round(sum(?immobili?*?sal_netta))) * 100, $va := $c(sum(?versamenti?*[?rata eq 'Acconto']?versato)), $vs := $c(sum(?versamenti?*[?rata eq 'Saldo']?versato)), $i := $c(sum(?interessi?*?interesse)), $s := $c(sum(?sanzioni?*?sanzione)), $sp := $c(number(translate(?spese, ',.', '.'))), $t := $da + $ds - $va - $vs + $i + $s + $sp, $m := xs:integer(round($t div 100)) * 100 return $f($m - $t)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "importo",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $da := xs:integer(round(sum(?immobili?*?acc_netta))) * 100, $ds := xs:integer(round(sum(?immobili?*?sal_netta))) * 100, $va := $c(sum(?versamenti?*[?rata eq 'Acconto']?versato)), $vs := $c(sum(?versamenti?*[?rata eq 'Saldo']?versato)), $i := $c(sum(?interessi?*?interesse)), $s := $c(sum(?sanzioni?*?sanzione)), $sp := $c(number(translate(?spese, ',.', '.'))), $t := $da + $ds - $va - $vs + $i + $s + $sp, $m := xs:integer(round($t div 100)) * 100 return $f($m)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "arrotondamento_adesione",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $da := xs:integer(round(sum(?immobili?*?acc_netta))) * 100, $ds := xs:integer(round(sum(?immobili?*?sal_netta))) * 100, $va := $c(sum(?versamenti?*[?rata eq 'Acconto']?versato)), $vs := $c(sum(?versamenti?*[?rata eq 'Saldo']?versato)), $i := $c(sum(?interessi?*?interesse)), $r := $c(sum(?sanzioni?*?ridotta)), $sp := $c(number(translate(?spese, ',.', '.'))), $ta := $da + $ds - $va - $vs + $i + $r + $sp, $ma := xs:integer(round($ta div 100)) * 100 return $f($ma - $ta)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "importo_adesione",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $da := xs:integer(round(sum(?immobili?*?acc_netta))) * 100, $ds := xs:integer(round(sum(?immobili?*?sal_netta))) * 100, $va := $c(sum(?versamenti?*[?rata eq 'Acconto']?versato)), $vs := $c(sum(?versamenti?*[?rata eq 'Saldo']?versato)), $i := $c(sum(?interessi?*?interesse)), $r := $c(sum(?sanzioni?*?ridotta)), $sp := $c(number(translate(?spese, ',.', '.'))), $ta := $da + $ds - $va - $vs + $i + $r + $sp, $ma := xs:integer(round($ta div 100)) * 100 return $f($ma)"
+    },
+    {
+      "@type": "Bind",
+      "ref": "#avviso",
+      "property": "importo_rimborso",
+      "calculate": "let $f := function($c as xs:integer) as xs:string { let $a := abs($c), $e := string($a idiv 100), $d := $a mod 100, $n := string-length($e) return concat(if ($c lt 0) then '-' else '', string-join(for $i in 1 to $n return concat(if ($i gt 1 and ($n - $i + 1) mod 3 eq 0) then '.' else '', substring($e, $i, 1)), ''), ',', if ($d lt 10) then '0' else '', string($d)) }, $c := function($x) as xs:integer { xs:integer(round($x * 100)) }, $da := xs:integer(round(sum(?immobili?*?acc_netta))) * 100, $ds := xs:integer(round(sum(?immobili?*?sal_netta))) * 100, $va := $c(sum(?versamenti?*[?rata eq 'Acconto']?versato)), $vs := $c(sum(?versamenti?*[?rata eq 'Saldo']?versato)), $i := $c(sum(?interessi?*?interesse)), $s := $c(sum(?sanzioni?*?sanzione)), $sp := $c(number(translate(?spese, ',.', '.'))), $t := $da + $ds - $va - $vs + $i + $s + $sp, $m := xs:integer(round($t div 100)) * 100 return $f(-$m)"
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
