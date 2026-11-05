@@ -1,0 +1,69 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "letture.csv",
+  "dialect": {
+    "delimiter": ";"
+  },
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "codice"
+      },
+      {
+        "name": "giorno"
+      },
+      {
+        "name": "data"
+      },
+      {
+        "name": "f1",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ","
+          }
+        }
+      },
+      {
+        "name": "f2",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ","
+          }
+        }
+      },
+      {
+        "name": "f3",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ","
+          }
+        }
+      },
+      {
+        "name": "totale",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ","
+          }
+        }
+      },
+      {
+        "name": "lettura",
+        "datatype": {
+          "base": "decimal",
+          "format": {
+            "decimalChar": ",",
+            "groupChar": "."
+          }
+        }
+      },
+      {
+        "name": "festivo"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+/* The palette and the grid, as custom properties on :root. One accent; the rest is ink and two greys. */
+:root {
+  --ink: #1b2430;
+  --muted: #5a6573;
+  --rule: #d4d9df;
+  --tint: #eef3f6;
+  --accent: #0a5f7a;
+
+  --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
+
+  /* One line of text is 14pt; a table row is a line. The measure is 174mm, split in the tables by fixed columns. */
+  --unit: 14pt;
+  --gap: 12mm;
+}

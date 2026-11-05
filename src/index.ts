@@ -128,6 +128,25 @@ export const specimens: readonly Specimen[] = [
     '@font-face woff2 variable',
     '@font-face ttf for a family named only inside an SVG in an img',
   ]),
+  make('bolletta', 'A mail-merge template: an electricity bill whose values and readings come from a store', [
+    '@page size and margins',
+    '@page :first and :blank',
+    'margin boxes on two sides',
+    'string-set and string() with start',
+    'counter(page) and counter(pages)',
+    'target-counter() on a link',
+    'break-before: page',
+    'break-inside: avoid',
+    'display: grid',
+    'tables over a page break, widths on the first row',
+    'tr:has() over a value the file carries',
+    'font-variant-numeric: tabular-nums',
+    'microdata: itemscope, itemid, itemprop, one value in several fields',
+    'a JSON-LD data block with XForms binds as XPath 3.1',
+    'template data-repeat over a CSV described by CSVW metadata',
+    'data elements: a typed value and its text',
+    '@font-face woff2 variable',
+  ]),
 ];
 
 // From a tester's print of administrative documents with the published cli 0.1.3, on 2026-11-03.

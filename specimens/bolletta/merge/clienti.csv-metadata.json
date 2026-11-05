@@ -1,0 +1,89 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "clienti.csv",
+  "dialect": {
+    "delimiter": ";"
+  },
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "codice"
+      },
+      {
+        "name": "cliente"
+      },
+      {
+        "name": "indirizzo"
+      },
+      {
+        "name": "localita"
+      },
+      {
+        "name": "fattura"
+      },
+      {
+        "name": "emissione"
+      },
+      {
+        "name": "pod"
+      },
+      {
+        "name": "periodo"
+      },
+      {
+        "name": "mesi"
+      },
+      {
+        "name": "potenza"
+      },
+      {
+        "name": "kwmese"
+      },
+      {
+        "name": "scadenza"
+      },
+      {
+        "name": "e_f1"
+      },
+      {
+        "name": "e_f2"
+      },
+      {
+        "name": "e_f3"
+      },
+      {
+        "name": "comm"
+      },
+      {
+        "name": "materia"
+      },
+      {
+        "name": "fissa"
+      },
+      {
+        "name": "qpot"
+      },
+      {
+        "name": "qen"
+      },
+      {
+        "name": "trasporto"
+      },
+      {
+        "name": "oneri"
+      },
+      {
+        "name": "accise"
+      },
+      {
+        "name": "imponibile"
+      },
+      {
+        "name": "iva"
+      },
+      {
+        "name": "importo"
+      }
+    ]
+  }
+}

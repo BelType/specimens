@@ -25,11 +25,13 @@ test('every listed specimen and case has its folder and index.html, and every fo
 
 test('the closure: every reference stays inside the specimen own folder', () => {
   for (const s of all) {
-    for (const file of walk(s.dir).filter((f) => /\.(html|css)$/.test(f))) {
+    for (const file of walk(s.dir).filter((f) => /\.(html|css)$|-metadata\.json$/.test(f))) {
       const text = fs.readFileSync(file, 'utf8');
       const refs: string[] = [];
       for (const m of text.matchAll(/\b(?:href|src)\s*=\s*["']([^"']*)["']/g)) refs.push(m[1]!);
       for (const m of text.matchAll(/url\(\s*["']?([^"')]*)["']?\s*\)/g)) refs.push(m[1]!);
+      // A data block's table (`"csvw:url"`) and a CSVW metadata file's own `"url"` are references too.
+      for (const m of text.matchAll(/"(?:csvw:)?url"\s*:\s*"([^"]*)"/g)) refs.push(m[1]!);
       for (const ref of refs) {
         if (ref === '' || ref.startsWith('#') || ref.startsWith('data:')) continue;
         const where = `${path.relative(root, file)} -> ${ref}`;

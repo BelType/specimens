@@ -1,0 +1,22 @@
+/* Type: Source Sans 3 for everything. Sizes and leading in pt; never line-height: normal. The face is declared here, from the specimen's own folder. */
+
+@font-face { font-family: 'Source Sans 3'; src: url('../fonts/SourceSans3-Variable.woff2') format('woff2-variations'); font-weight: 200 900; font-style: normal; }
+
+/* html:root, not :root: the engine's own `:root { line-height }` provision is spliced into the head after the author's links and wins a tie. */
+html:root {
+  font-family: var(--sans);
+  font-size: 9.5pt;
+  line-height: 14pt;
+  color: var(--ink);
+  font-kerning: normal;
+}
+body { margin: 0; }
+
+p { margin: 0; text-align: left; hyphens: manual; orphans: 2; widows: 2; }
+h1, h2, h3 { font-family: var(--sans); margin: 0; font-weight: 600; text-align: left; hyphens: manual; break-after: avoid; }
+h2 { font-size: 15pt; line-height: 21pt; }
+h3 { font-size: 10pt; line-height: 14pt; }
+strong { font-weight: 600; }
+
+/* A label: small, spaced, capitals. */
+.label { font-size: 7.5pt; line-height: 14pt; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }

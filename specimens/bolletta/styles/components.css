@@ -1,0 +1,73 @@
+/* The parts of the bill: the brand header, the window for the envelope, the identifiers, the amount to pay, the breakdown, the detail and readings tables, the small print. One accent, few rules, a grid of 174mm. One scale of type: 7.5, 8.5, 9.5, 11, 15 and the amount at 30pt. */
+
+/* ---- Page one ---- */
+.brand { display: grid; grid-template-columns: 13mm 1fr; column-gap: 4mm; align-items: center; }
+.brand svg.mark { grid-column: 1; grid-row: 1 / span 2; width: 13mm; height: 13mm; display: block; }
+.brand svg.mark .bg { fill: var(--accent); }
+.brand svg.mark .bar { fill: #fff; }
+.brand-name { grid-column: 2; font-size: 15pt; line-height: 18pt; font-weight: 600; }
+.brand-sub { grid-column: 2; font-size: 7.5pt; line-height: 10pt; color: var(--muted); }
+
+/* The window of a DL envelope shows the block at 20mm from the left and 48mm from the top: the page margin is 18mm and the header is 13mm high. */
+.envelope { display: grid; grid-template-columns: 80mm 1fr; column-gap: 10mm; margin-top: 18mm; }
+.address { margin-left: 2mm; min-height: 34mm; }
+.address p { font-size: 11pt; line-height: 15pt; }
+.address .sender { font-size: 7.5pt; line-height: 10pt; color: var(--muted); margin-bottom: 10pt; }
+.address .recipient { font-weight: 600; }
+.ident { display: grid; grid-template-columns: 40mm 1fr; align-content: start; }
+.ident .label { font-size: 7.5pt; line-height: 15pt; }
+.ident p { line-height: 15pt; }
+
+.due { display: grid; grid-template-columns: 1.35fr 1fr; column-gap: 8mm; margin-top: 22mm; }
+.due .label { color: var(--accent); }
+.due .amount { font-size: 30pt; line-height: 36pt; font-weight: 600; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; color: var(--accent); }
+.due .deadline { font-size: 20pt; line-height: 36pt; font-weight: 600; font-variant-numeric: tabular-nums; }
+.pay { margin-top: 10pt; max-width: 150mm; color: var(--muted); }
+
+table.summary { width: 100%; max-width: 100mm; border-collapse: collapse; margin-top: 22mm; font-size: 9.5pt; line-height: 15pt; font-variant-numeric: tabular-nums; break-inside: avoid; }
+table.summary caption { caption-side: top; text-align: left; padding: 0 0 4pt; font-size: 7.5pt; line-height: 15pt; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+table.summary td { padding: 0; }
+table.summary .num { text-align: right; white-space: nowrap; }
+table.summary tr.total td { font-weight: 600; border-top: 1px solid var(--ink); padding-top: 3pt; }
+
+a.ref { color: inherit; text-decoration: none; }
+a.ref::after { content: ' ' target-counter(attr(href url), page); }
+
+/* ---- The detail and the readings ---- */
+h2.section-title, .readings-title { font-size: 15pt; line-height: 21pt; margin: 0 0 8pt; }
+.readings-title { margin-top: 24pt; }
+.intro { font-size: 8.5pt; line-height: 12pt; color: var(--muted); max-width: 150mm; margin-bottom: 8pt; }
+
+table.fattura, table.letture { width: 100%; border-collapse: collapse; table-layout: fixed; font-variant-numeric: tabular-nums; }
+table.fattura { font-size: 8.5pt; line-height: 13pt; }
+table.letture { font-size: 8pt; line-height: 11.5pt; }
+table.fattura tr, table.letture tr { break-inside: avoid; }
+table.fattura th, table.fattura td, table.letture th, table.letture td { padding: 0 4pt 0 0; text-align: left; font-weight: 400; }
+table.fattura thead th, table.letture thead th { padding-bottom: 3pt; font-size: 7.5pt; line-height: 10pt; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); vertical-align: bottom; border-bottom: 1px solid var(--ink); }
+table.fattura .num, table.letture .num { text-align: right; padding-right: 0; white-space: nowrap; }
+table.fattura td.num + td, table.fattura th.num + th { padding-left: 8pt; }
+/* The widths ride on the first row's cells: a table that holds a <colgroup> cannot be walked across a page break. */
+th.c-desc { width: 82mm; } th.c-qty { width: 19mm; } th.c-unit { width: 15mm; } th.c-price { width: 35mm; } th.c-amount { width: 23mm; }
+th.r-date { width: 34mm; } th.r-f { width: 28mm; } th.r-meter { width: 28mm; }
+
+table.fattura tr.group th { padding-top: 10pt; padding-bottom: 1pt; font-size: 8.5pt; font-weight: 600; color: var(--accent); }
+table.fattura tr.sub td { font-weight: 600; border-top: 1px solid var(--rule); }
+table.fattura tr.sub.base td { padding-top: 8pt; border-top: 1px solid var(--ink); }
+table.fattura tr.total td { font-weight: 600; font-size: 11pt; line-height: 20pt; border-top: 1px solid var(--ink); }
+table.letture td { border-bottom: 1px solid var(--rule); }
+table.letture tr.sub td { font-weight: 600; border-top: 1px solid var(--ink); border-bottom: 0; }
+/* A Sunday or a holiday is a row whose festivo field says 1: the grey ground is a selector over a value the file carries, not a class anyone wrote. */
+table.letture tr:has(data[itemprop="festivo"][value="1"]) td { background: var(--tint); color: var(--muted); }
+
+/* ---- Small print ---- */
+.info { margin-top: 24pt; padding-top: 8pt; border-top: 1px solid var(--rule); break-inside: avoid; }
+.info h2 { font-size: 11pt; line-height: 15pt; margin: 0 0 3pt; }
+.info p { font-size: 8pt; line-height: 11.5pt; max-width: 150mm; }
+.info p + p { margin-top: 3pt; }
+.info .fine { margin-top: 8pt; color: var(--muted); }
+/* The meter's picture is one line high, beside its caption. */
+.info figure { margin: 0; }
+.info figure img { display: block; }
+.info figure.meter { display: grid; grid-template-columns: 16mm 1fr; column-gap: 4mm; align-items: center; max-width: 150mm; margin-top: 4pt; }
+.info figure.meter img { width: 16mm; height: 8mm; }
+.info figure.meter figcaption { font-size: 7.5pt; line-height: 10pt; color: var(--muted); }
