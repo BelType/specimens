@@ -6,7 +6,7 @@ The documents every BelType interface is shown and tested on. A specimen is a fi
 import { specimens, specimen } from '@beltype/specimens';
 
 specimen('paper').entry; // absolute path of specimens/paper/index.html
-specimens.map((s) => s.name); // ['paper', 'delibera', 'trattato', 'mostra']
+specimens.map((s) => s.name); // ['paper', 'delibera', 'trattato', 'mostra', 'bolletta']
 ```
 
 | Name | Title | Exercises |
@@ -15,8 +15,20 @@ specimens.map((s) => s.name); // ['paper', 'delibera', 'trattato', 'mostra']
 | `delibera` | A resolution of the Regional Government of Sardinia (A4, Italian, a real act's text) | `@page` size and margins, `@page :first`, margin boxes, `string-set` and `string()`, `counter(page)`, `counter(pages)`, `hyphens: auto` with `lang="it"`, orphans and widows, `break-after: avoid`, `break-inside: avoid`, grid on a `dl`, a table with a `colgroup`, `font-variant-numeric: tabular-nums`, `list-style-position: outside`, `::marker`, inline SVG, `@font-face` woff2 variable at several weights |
 | `trattato` | A book: the consolidated Treaty establishing the European Community (2002), in Italian, 156 × 234 mm | `@page :left`, `:right`, `:first` and `:blank`, named pages, margin boxes on three sides, `string-set` and `string()` with `start`, `counter(page)`, nested counters, `target-counter()` for pages and for author counters, `break-before: right` and `break-after: right`, `break-inside: avoid`, orphans and widows, `hyphens: auto` with `lang="it"`, small capitals and old-style figures, a variable `@font-face` with an optical-size axis |
 | `mostra` | An exhibition leaflet on the Roman Empire in the year 117 (A4, Italian, an invented exhibition around a real map) | `@page :first` with no margin and a dark `@page` background, margin boxes, `counter()` in `upper-roman`, `::first-letter`, `print-color-adjust: exact`, linear, radial, conic, repeating-linear and repeating-conic gradients layered, sized and positioned, gradients held in custom properties, `border-radius` on a gradient, `outline-offset`, `box-shadow` several and inset, `text-shadow`, `filter: drop-shadow()`, `clip-path: polygon()`, `transform: rotate()`, `z-index`, grid and flex, a downloaded SVG map in an `img` (408 paths, `feGaussianBlur`, text in a system font), inline SVG with a luminance `mask`, `mix-blend-mode`, patterns, `use` and `feDropShadow`, `@font-face` woff2 variable, and a ttf `@font-face` for the family the map's legend names |
+| `bolletta` | A mail-merge template: an electricity bill from an invented supplier (A4, Italian), from the studio's demo | microdata fields (`itemscope`, `itemid`, `itemprop`, one value shown in several places) bound to a JSON-LD data block with XForms binds in XPath 3.1, a `<template data-repeat>` over a CSV described by CSVW metadata, `<data>` cells with a typed value, `tr:has()` over a value the file carries, `string-set` and `string()`, `target-counter()`, margin boxes, tables over a page break, `@font-face` woff2 variable |
 
 `mostra`'s emblem is a luminance mask driven by a gradient. Measured 2026-11-04 on a reduced copy: Chromium's own print writes it as a 300 ppi image with a soft mask of its own, and Caster writes it as a vector soft mask over a shading, with no image.
+
+## Merging the bolletta
+
+`bolletta` is a template, saved the way a store host saves it: its fields hold the first customer's values, its JSON-LD block (`#__beltype-store`) holds the same values with a `csvw:Table` reference to `letture.csv`, and its readings table is a `<template data-repeat="letture">`, inert. Printed as it is, it shows the first customer's bill with an empty readings table; a host fills it.
+
+The data a merge needs sits in `merge/`, each file described by CSVW metadata beside it (delimiter `;`, decimals with a comma):
+
+- `merge/clienti.csv`: one row per customer, twelve of them, keyed by `codice`. Every column is a key of the `#doc` item and is written as text.
+- `merge/letture.csv`: the daily readings of every customer, keyed by the same `codice`; the template's `letture.csv` is the first customer's, without the key. Customers are billed for one month or two, 30 or 61 rows.
+
+A merge for one customer opens the block with that customer's readings as the rows of `letture.csv` (`openBlock(text, { rows })` in `prosemirror-stores/graph`), sets every column of their row on `#doc`, writes the fields from the graph (`writeMicrodata` in `prosemirror-stores/microdata`), clones the template once per reading, and writes the block back. The binds compute `giorni`, `f1`, `f2`, `f3` and `consumo` from the rows; every other value comes from `clienti.csv`, and `test/bolletta.test.ts` holds each bill's arithmetic to the cent, so a merge can be checked against the data. Under a DOM that exposes a `<template>`'s content as its children (linkedom does; a browser does not), a crawl over children reaches the template's own fields: skip `template` when writing.
 
 ## Cases
 

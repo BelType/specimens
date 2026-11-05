@@ -1,0 +1,36 @@
+/* The page: A4, one measure, furniture on every page after the first: the supplier, the invoice number (carried by string-set from the identifiers on page one), the section the page is in, the folio as "pagina X di Y". Every @page rule is unlayered. */
+
+@page {
+  size: A4;
+  margin: 20mm 18mm 22mm 18mm;
+  @top-left { text-align: left; vertical-align: middle; font-family: 'Source Sans 3', Helvetica, sans-serif; font-size: 7.5pt; line-height: 10pt; letter-spacing: 0.04em; color: #5a6573; content: 'Energia Esempio S.p.A.'; }
+  @top-center { text-align: center; vertical-align: middle; font-family: 'Source Sans 3', Helvetica, sans-serif; font-size: 7.5pt; line-height: 10pt; letter-spacing: 0.04em; color: #1b2430; content: string(sezione, start); }
+  @top-right { text-align: right; vertical-align: middle; font-family: 'Source Sans 3', Helvetica, sans-serif; font-size: 7.5pt; line-height: 10pt; letter-spacing: 0.04em; color: #5a6573; content: 'Fattura n. ' string(fattura); }
+  @bottom-left { text-align: left; vertical-align: middle; font-family: 'Source Sans 3', Helvetica, sans-serif; font-size: 7.5pt; line-height: 10pt; color: #5a6573; content: 'Documento dimostrativo: nomi, codici e importi sono di fantasia'; }
+  @bottom-right { text-align: right; vertical-align: middle; font-family: 'Source Sans 3', Helvetica, sans-serif; font-size: 7.5pt; line-height: 10pt; font-variant-numeric: tabular-nums; color: #1b2430; content: 'pagina ' counter(page) ' di ' counter(pages); }
+}
+
+/* The first page is the summary: no furniture. */
+@page :first {
+  @top-left { content: none; }
+  @top-center { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+@page :blank {
+  @top-left { content: none; }
+  @top-center { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+/* The strings the furniture reads. The invoice number is the field in the identifiers. The section is named by each heading; the readings' heading also names its columns, so a page that begins inside that table says what it is looking at in its head, because Cicero does not repeat a table's header row. */
+.invoice { string-set: fattura content(); }
+.section-title { string-set: sezione content(); }
+.readings-title { string-set: sezione content() ' · colonne: data, F1, F2, F3, totale, lettura (kWh)'; }
+
+/* The detail opens the second page; the readings follow it and run over the page break; the small print comes last, on the same page as the end of the table. */
+.detail { break-before: page; }
