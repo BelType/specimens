@@ -2,9 +2,8 @@
 
 /* ---- Page one ---- */
 .brand { display: grid; grid-template-columns: 13mm 1fr; column-gap: 4mm; align-items: center; }
-.brand svg.mark { grid-column: 1; grid-row: 1 / span 2; width: 13mm; height: 13mm; display: block; }
-.brand svg.mark .bg { fill: var(--accent); }
-.brand svg.mark .bar { fill: #fff; }
+.brand .mark { grid-column: 1; grid-row: 1 / span 2; }
+.brand .mark svg { width: 13mm; height: 13mm; display: block; }
 .brand-name { grid-column: 2; font-size: 15pt; line-height: 18pt; font-weight: 600; }
 .brand-sub { grid-column: 2; font-size: 7.5pt; line-height: 10pt; color: var(--muted); }
 
