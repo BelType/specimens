@@ -1,0 +1,43 @@
+/* The clean slate: the same bytes in every specimen, linked first. Each engine brings its own defaults, so nothing in a print is left to them: these rules state what the engines disagree on (measured against WeasyPrint 69's and Chromium's defaults, tag by tag) and take away what a specimen should have to ask for. Every selector here is a bare element, so any rule of a specimen beats it. A specimen writes its root as html:root, never html, because an engine may add a :root rule of its own after the links (Cicero does, for line-height) and a bare html loses to it. */
+
+/* What the whole document carries. Chromium's print drops backgrounds unless told otherwise. */
+html { print-color-adjust: exact; -webkit-print-color-adjust: exact; font-kerning: normal; hyphenate-character: "\2010"; }
+
+/* No block has a margin or a padding until the specimen gives it one. */
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, figure, figcaption, blockquote, address, table, caption, th, td { margin: 0; padding: 0; }
+
+/* A heading is text at the size and weight around it, and never ends a page or splits across one: WeasyPrint has those two by default, Chromium has neither. WeasyPrint also keeps a list from starting a page, Chromium does not. */
+h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; break-after: avoid; break-inside: avoid; }
+ul, ol { break-before: auto; }
+
+/* A table has no gaps and no colour of its own, and a width written on a cell includes its padding, so that columns adding up to the measure fill it and no more: a table wider than the page makes Chromium shrink the whole page to fit. Chromium centres a th and a caption, WeasyPrint does not; its table borders are grey, Chromium's are black. */
+table { border-collapse: collapse; border-spacing: 0; }
+table, th, td { border-color: currentcolor; }
+th, td { box-sizing: border-box; }
+caption, th { font-weight: inherit; text-align: inherit; }
+
+/* Inline. The engines size sub and sup differently and only WeasyPrint gives them their own line-height; their blues differ too. */
+sub, sup { font-size: 0.75em; line-height: 0; }
+sub { vertical-align: -0.25em; }
+sup { vertical-align: 0.4em; }
+a { color: inherit; text-decoration: none; }
+
+/* The sixteen margin boxes, aligned as css-page-3's table says, so that a specimen's folio sits in the same place in every engine. */
+@page {
+  @top-left-corner { text-align: right; vertical-align: middle; }
+  @top-left { text-align: left; vertical-align: middle; }
+  @top-center { text-align: center; vertical-align: middle; }
+  @top-right { text-align: right; vertical-align: middle; }
+  @top-right-corner { text-align: left; vertical-align: middle; }
+  @bottom-left-corner { text-align: right; vertical-align: middle; }
+  @bottom-left { text-align: left; vertical-align: middle; }
+  @bottom-center { text-align: center; vertical-align: middle; }
+  @bottom-right { text-align: right; vertical-align: middle; }
+  @bottom-right-corner { text-align: left; vertical-align: middle; }
+  @left-top { text-align: center; vertical-align: top; }
+  @left-middle { text-align: center; vertical-align: middle; }
+  @left-bottom { text-align: center; vertical-align: bottom; }
+  @right-top { text-align: center; vertical-align: top; }
+  @right-middle { text-align: center; vertical-align: middle; }
+  @right-bottom { text-align: center; vertical-align: bottom; }
+}

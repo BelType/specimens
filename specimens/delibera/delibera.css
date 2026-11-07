@@ -17,15 +17,14 @@
   @top-center { content: none; }
 }
 
-html { font: 400 11pt/1.5 "Source Sans 3", sans-serif; color: var(--ink); hyphens: auto; font-variant-numeric: lining-nums; }
-body { margin: 0; }
+html:root { font: 400 11pt/1.5 "Source Sans 3", sans-serif; color: var(--ink); hyphens: auto; font-variant-numeric: lining-nums; }
 p { margin: 0 0 2.5mm; text-align: justify; orphans: 3; widows: 3; }
 
 /* The issuing body: the emblem drawn inline, the name in the two official languages. */
 header.ente { text-align: center; margin-bottom: 9mm; }
 header.ente svg { display: block; width: 15mm; height: auto; margin: 0 auto 2.5mm; }
 .ente-nome { font: 600 8pt/1.35 "Source Serif 4", serif; letter-spacing: 0.06em; text-transform: uppercase; }
-.estremi { font: 600 12.5pt/1.3 "Source Sans 3", sans-serif; margin-top: 7mm; letter-spacing: 0.01em; string-set: atto content(); }
+.estremi { font: 600 12.5pt/1.3 "Source Sans 3", sans-serif; margin: 7mm 0 3mm; letter-spacing: 0.01em; string-set: atto content(); }
 
 /* The identifiers block: each label hangs in its own column beside its text. */
 dl.identificativi { display: grid; grid-template-columns: 24mm 1fr; column-gap: 5mm; margin: 0 0 8mm; padding: 3mm 0; border-top: 0.75pt solid var(--ink); border-bottom: 0.75pt solid var(--ink); }

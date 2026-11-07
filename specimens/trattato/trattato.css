@@ -5,24 +5,22 @@
 
 :root { --ink: #1c1b19; --quiet: #6b665e; --accent: #7a2e1f; --rule: #b9b2a6; }
 
+/* The margin boxes state their own type, on each: Paged.js hands a font on @page to its page wrappers, and the book's text inherits it. */
 /* The page. 156 × 234 mm is the royal octavo of scholarly and legal editions: at 10 pt it sets about 65 characters to the line, and a long treaty stays one hand-held volume. The outer margin is the wider one, for the thumb and the article index; the inner one allows for the binding. */
 @page {
   size: 156mm 234mm;
   margin: 20mm 26mm 24mm 18mm;
-  font: 400 7.5pt/1.2 "Source Serif 4", serif;
-  color: var(--quiet);
-  hyphens: manual;
 }
 @page :left {
   margin: 20mm 18mm 24mm 26mm;
-  @top-left { content: string(parte); font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-size: 8.5pt; vertical-align: bottom; padding-bottom: 5mm; }
-  @left-top { content: string(articolo, start); font-style: italic; vertical-align: top; text-align: center; }
-  @bottom-left { content: counter(page); font-size: 9pt; color: var(--ink); vertical-align: top; padding-top: 6mm; text-align: left; }
+  @top-left { font: 400 7.5pt/1.2 "Source Serif 4", serif; color: var(--quiet); hyphens: manual; content: string(parte); font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-size: 8.5pt; vertical-align: bottom; padding-bottom: 5mm; }
+  @left-top { font: 400 7.5pt/1.2 "Source Serif 4", serif; color: var(--quiet); hyphens: manual; content: string(articolo, start); font-style: italic; vertical-align: top; text-align: center; }
+  @bottom-left { font: 400 7.5pt/1.2 "Source Serif 4", serif; color: var(--quiet); hyphens: manual; content: counter(page); font-size: 9pt; color: var(--ink); vertical-align: top; padding-top: 6mm; text-align: left; }
 }
 @page :right {
-  @top-right { content: string(titolo); font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-size: 8.5pt; vertical-align: bottom; padding-bottom: 5mm; text-align: right; }
-  @right-top { content: string(articolo, start); font-style: italic; vertical-align: top; text-align: center; }
-  @bottom-right { content: counter(page); font-size: 9pt; color: var(--ink); vertical-align: top; padding-top: 6mm; text-align: right; }
+  @top-right { font: 400 7.5pt/1.2 "Source Serif 4", serif; color: var(--quiet); hyphens: manual; content: string(titolo); font-variant-caps: all-small-caps; letter-spacing: 0.08em; font-size: 8.5pt; vertical-align: bottom; padding-bottom: 5mm; text-align: right; }
+  @right-top { font: 400 7.5pt/1.2 "Source Serif 4", serif; color: var(--quiet); hyphens: manual; content: string(articolo, start); font-style: italic; vertical-align: top; text-align: center; }
+  @bottom-right { font: 400 7.5pt/1.2 "Source Serif 4", serif; color: var(--quiet); hyphens: manual; content: counter(page); font-size: 9pt; color: var(--ink); vertical-align: top; padding-top: 6mm; text-align: right; }
 }
 /* Front matter, part openers, the forced blanks and the colophon carry no running matter. */
 @page :first { @top-right { content: none; } @right-top { content: none; } @bottom-right { content: none; } }
@@ -32,10 +30,8 @@
 @page apertura { @top-left { content: none; } @top-right { content: none; } @left-top { content: none; } @right-top { content: none; } @bottom-left { content: none; } @bottom-right { content: none; } }
 @page colofone { @top-left { content: none; } @top-right { content: none; } @left-top { content: none; } @right-top { content: none; } @bottom-left { content: none; } @bottom-right { content: none; } }
 
-html { font: 400 10pt/13.4pt "Source Serif 4", serif; color: var(--ink); hyphens: auto; font-optical-sizing: auto; font-variant-numeric: oldstyle-nums; font-kerning: normal; }
-body { margin: 0; }
+html:root { font: 400 10pt/13.4pt "Source Serif 4", serif; color: var(--ink); hyphens: auto; font-optical-sizing: auto; font-variant-numeric: oldstyle-nums; font-kerning: normal; }
 p { margin: 0; text-align: justify; orphans: 2; widows: 2; }
-a { color: inherit; text-decoration: none; }
 .mc { font-variant-caps: all-small-caps; letter-spacing: 0.04em; hyphens: manual; }
 .ord { font-variant-numeric: ordinal; }
 sup.rinvio { font-size: 0.68em; line-height: 0; vertical-align: 0.5em; font-variant-numeric: lining-nums; color: var(--accent); margin-left: 0.1em; }

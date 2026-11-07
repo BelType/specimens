@@ -34,9 +34,8 @@
   @bottom-center { content: none; }
 }
 
-html { font: 8.5pt/1.3 "Liberation Sans", sans-serif; color: var(--ink); }
-body { margin: 0; }
-p, ul, dl, h1, h2, h3 { margin: 0; }
+html:root { font: 8.5pt/1.3 "Liberation Sans", sans-serif; color: var(--ink); }
+h2, h3 { font-weight: 700; }
 
 /* One notice: a right-hand start, and a page count of its own. */
 .avviso { page: prima; break-before: recto; counter-reset: page 1; }
@@ -49,7 +48,6 @@ p, ul, dl, h1, h2, h3 { margin: 0; }
 .piede .barre { display: block; font: 26pt/1 "Libre Barcode 39"; }
 .piede .barre::before, .piede .barre::after { content: "*"; }
 .piede .did { display: block; font: 7pt "Liberation Mono"; letter-spacing: 0.08em; }
-.piede .pagina { color: inherit; text-decoration: none; }
 .piede .pagina::after { content: " " counter(page) "/" target-counter(attr(href url), page); }
 
 /* The first page. */
@@ -61,7 +59,7 @@ p, ul, dl, h1, h2, h3 { margin: 0; }
 .protocollo p { padding: 0.4mm 1.5mm; }
 .protocollo .verso { grid-row: 1; grid-column: 2; border-left: 0.6pt solid var(--stamp); font: 13pt/1 "Liberation Sans"; text-align: center; }
 .protocollo .ente { grid-column: 1; border-bottom: 0.6pt solid var(--stamp); }
-.protocollo .copia, .protocollo .numero-protocollo { grid-column: 1 / -1; }
+.protocollo .copia, .protocollo .numero-protocollo { grid-column: 1 / 3; }
 .protocollo .copia { border-bottom: 0.3pt solid var(--stamp); text-align: center; }
 
 .estremi-atto { width: 76mm; margin-top: 4mm; padding: 2mm 2.5mm 4mm; border: var(--rule); box-shadow: 1.2mm 1.2mm 0 #9a9a9a; }
@@ -76,7 +74,7 @@ h1 { margin: 12mm 0 2mm; font-size: 14pt; font-weight: 400; text-align: center; 
 .contribuente { display: grid; grid-template-columns: 30mm 1fr; column-gap: 1.5mm; row-gap: 1mm; padding: 1.5mm 2mm; border: var(--rule); }
 .contribuente dt { font-weight: 700; text-align: right; }
 .contribuente dt::after { content: ":"; }
-.contribuente dd { margin: 0; text-transform: uppercase; }
+.contribuente dd { text-transform: uppercase; }
 
 .eredi { margin-top: 3mm; }
 .eredi h2 { font-size: 8.5pt; text-transform: uppercase; }
@@ -133,7 +131,7 @@ tfoot th { text-align: right; }
 /* The signature stays with the last paragraph: no page holds it alone. */
 .firma { break-before: avoid; break-inside: avoid; display: grid; grid-template-columns: 1fr 1fr; margin-top: 6mm; row-gap: 2mm; }
 .firma .chi { text-align: center; }
-.firma .nota, .firma .fantasia { grid-column: 1 / -1; font-size: 7pt; color: #444; }
+.firma .nota, .firma .fantasia { grid-column: 1 / 3; font-size: 7pt; color: #444; }
 
 /* What the data turns on and off. */
 .avviso:has(> data[itemprop="esito"][value="rimborso"]) .solo-accertamento,

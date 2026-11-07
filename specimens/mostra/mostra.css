@@ -22,8 +22,8 @@
   @bottom-right { content: none; }
 }
 
-html { font: 400 10pt/1.55 "Source Serif 4", serif; color: var(--ink); hyphens: auto; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-body { margin: 0; counter-reset: sezione; }
+html:root { font: 400 10pt/1.55 "Source Serif 4", serif; color: var(--ink); hyphens: auto; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+body { counter-reset: sezione; }
 p { margin: 0 0 3mm; orphans: 3; widows: 3; text-align: justify; }
 
 /* Section heads: a Roman numeral, letterspaced capitals and a gold hairline. */
