@@ -1,0 +1,42 @@
+/* A printer's estimate on A4: a letterhead, a grid of the parties on a dl, and two tables whose totals are formulas, written as data-formula attributes over the values they compute (prosemirror-spreads' markup). Every figure is a plain number with a decimal point, as the formulas read and write them. */
+
+@font-face { font-family: "Source Serif 4"; src: url("fonts/SourceSerif4-Variable.woff2") format("woff2"); font-weight: 200 900; font-style: normal; }
+@font-face { font-family: "Source Serif 4"; src: url("fonts/SourceSerif4-Italic-Variable.woff2") format("woff2"); font-weight: 200 900; font-style: italic; }
+@font-face { font-family: "Source Sans 3"; src: url("fonts/SourceSans3-Variable.woff2") format("woff2"); font-weight: 200 900; font-style: normal; }
+
+:root { --ink: #1a1a1a; --quiet: #666; --rule: #bbb; --accent: #7a2e1f; --tint: #f4efe9; }
+
+@page {
+  size: A4;
+  margin: 22mm 22mm 26mm;
+  @bottom-left { content: "Stamperia della Valle · Estimate 2026/114"; font: 400 8pt "Source Sans 3"; color: var(--quiet); }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 400 8pt "Source Sans 3"; color: var(--quiet); }
+}
+
+html:root { font: 400 10.5pt/1.45 "Source Serif 4", serif; color: var(--ink); hyphens: auto; }
+p { orphans: 2; widows: 2; }
+p + p { margin-top: 2mm; }
+
+.letterhead { border-bottom: 1.5pt solid var(--accent); padding-bottom: 3mm; margin-bottom: 8mm; }
+.firm { font: 600 16pt/1.1 "Source Sans 3", sans-serif; letter-spacing: 0.02em; color: var(--accent); }
+.address { font: 400 8.5pt/1.3 "Source Sans 3", sans-serif; color: var(--quiet); margin-top: 1mm; }
+
+.parties dl { display: grid; grid-template-columns: 24mm 1fr; gap: 1mm 4mm; font: 400 9.5pt/1.3 "Source Sans 3", sans-serif; margin-bottom: 8mm; }
+.parties dt { color: var(--quiet); }
+
+h1 { font: 600 15pt/1.2 "Source Serif 4", serif; margin-bottom: 4mm; }
+h2 { font: 600 11.5pt/1.2 "Source Serif 4", serif; margin: 8mm 0 2mm; }
+
+table { width: 100%; margin: 5mm 0 2mm; font: 400 9.5pt/1.3 "Source Sans 3", sans-serif; font-variant-numeric: tabular-nums; break-inside: avoid; }
+caption { caption-side: top; text-align: left; font-weight: 600; margin-bottom: 2mm; }
+th, td { padding: 1.3mm 2mm; text-align: right; }
+th:first-child, #costs :nth-child(3) { text-align: left; }
+thead th { border-top: 1pt solid var(--ink); border-bottom: 0.5pt solid var(--ink); font-weight: 600; vertical-align: bottom; }
+tbody tr:nth-child(even) { background: var(--tint); }
+tbody tr:last-child > * { border-bottom: 0.5pt solid var(--ink); }
+tfoot th { font-weight: 400; }
+tfoot tr:nth-last-child(2) > *, #runs tfoot tr > * { font-weight: 600; }
+tfoot tr:last-child > * { border-bottom: 1pt solid var(--ink); }
+td[data-formula] { color: var(--accent); }
+
+.signature { margin-top: 12mm; font-style: italic; }
