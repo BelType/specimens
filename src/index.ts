@@ -168,6 +168,18 @@ export const specimens: readonly Specimen[] = [
     'data elements: a typed value and its text, a flag with no text',
     '@font-face ttf: Liberation Sans, Liberation Mono, and Libre Barcode 39 for a barcode set as text',
   ]),
+  make('estimate', 'A printer\'s estimate for a book, whose totals are formulas', [
+    '@page size and margins',
+    'margin boxes',
+    'counter(page) and counter(pages)',
+    'grid on a dl',
+    'table with caption, thead, tbody and tfoot',
+    'th scope and abbr naming columns and rows',
+    'data-formula attributes over computed values',
+    'font-variant-numeric: tabular-nums',
+    'break-inside: avoid',
+    '@font-face woff2 variable',
+  ]),
 ];
 
 // From a tester's print of administrative documents with the published cli 0.1.3, on 2026-11-03.

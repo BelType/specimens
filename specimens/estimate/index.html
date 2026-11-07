@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Estimate for printing a book</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="estimate.css">
+</head>
+<body>
+  <header class="letterhead">
+    <p class="firm">Stamperia della Valle</p>
+    <p class="address">Via dei Torchi 12 · Borgo Fittizio · A sample document: the firm, the client and the figures are invented.</p>
+  </header>
+
+  <section class="parties">
+    <dl>
+      <dt>To</dt>
+      <dd>Edizioni del Faro, editorial office</dd>
+      <dt>Reference</dt>
+      <dd>Estimate 2026/114</dd>
+      <dt>Date</dt>
+      <dd><time datetime="2026-11-08">8 November 2026</time></dd>
+      <dt>Valid until</dt>
+      <dd><time datetime="2027-01-07">7 January 2027</time></dd>
+    </dl>
+  </section>
+
+  <h1>Estimate for printing a book</h1>
+  <p>Thank you for asking us to print <cite>The Salt Roads</cite>. The book has 320 pages of text in black on 90 g uncoated paper, 156 × 234 mm, sewn in signatures of sixteen pages and bound in a four-colour soft cover with flaps. The estimate below is for a run of 1 000 copies, delivered to your warehouse in one consignment.</p>
+  <p>Every amount is the quantity times its unit price, and the totals are the sum of the amounts. Books are taxed at the reduced rate of 4 %.</p>
+
+  <table id="costs">
+    <caption>The costs of the edition, for 1 000 copies</caption>
+    <thead>
+      <tr><th scope="col">Item</th><th scope="col" abbr="Qty">Quantity</th><th scope="col">Unit</th><th scope="col" abbr="Price">Unit price, €</th><th scope="col" abbr="Amount">Amount, €</th></tr>
+    </thead>
+    <tbody>
+      <tr><th scope="row">Typesetting</th><td>320</td><td>page</td><td>4</td><td data-formula="=Qty[Typesetting]*Price[Typesetting]">1280</td></tr>
+      <tr><th scope="row">Proofs</th><td>3</td><td>round</td><td>155</td><td data-formula="=Qty[Proofs]*Price[Proofs]">465</td></tr>
+      <tr><th scope="row">Plates</th><td>40</td><td>plate</td><td>18</td><td data-formula="=Qty[Plates]*Price[Plates]">720</td></tr>
+      <tr><th scope="row">Paper</th><td>21000</td><td>sheet</td><td>0.06</td><td data-formula="=Qty[Paper]*Price[Paper]">1260</td></tr>
+      <tr><th scope="row">Printing</th><td>20</td><td>forme</td><td>85</td><td data-formula="=Qty[Printing]*Price[Printing]">1700</td></tr>
+      <tr><th scope="row">Binding</th><td>1000</td><td>copy</td><td>1.25</td><td data-formula="=Qty[Binding]*Price[Binding]">1250</td></tr>
+      <tr><th scope="row">Cover</th><td>1000</td><td>copy</td><td>0.7</td><td data-formula="=Qty[Cover]*Price[Cover]">700</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><th scope="row">Subtotal</th><td></td><td></td><td></td><td data-formula="=SUM(Amount)">7375</td></tr>
+      <tr><th scope="row">VAT at 4 %</th><td></td><td></td><td></td><td data-formula="=ROUND(SUM(Amount)*0.04, 2)">295</td></tr>
+      <tr><th scope="row">Total</th><td></td><td></td><td></td><td data-formula="=ROUND(SUM(Amount)*1.04, 2)">7670</td></tr>
+      <tr><th scope="row">Per copy</th><td></td><td></td><td></td><td data-formula="=ROUND(SUM(Amount)*1.04/1000, 2)">7.67</td></tr>
+    </tfoot>
+  </table>
+
+  <h2>Other runs</h2>
+  <p>Typesetting, proofs, plates and the making ready of the press cost the same whatever the run; paper, binding and the cover are paid by the copy. A longer run therefore lowers the cost of each copy. The table below sets the three runs we discussed side by side, before tax.</p>
+
+  <table id="runs">
+    <caption>The cost of a copy by the length of the run</caption>
+    <thead>
+      <tr><th scope="col">Run</th><th scope="col">Copies</th><th scope="col" abbr="Fixed">Fixed costs, €</th><th scope="col" abbr="Variable">Per copy, €</th><th scope="col" abbr="Total">Total, €</th><th scope="col" abbr="Unit">Cost of a copy, €</th></tr>
+    </thead>
+    <tbody>
+      <tr><th scope="row" abbr="Short">Short run</th><td>500</td><td>4165</td><td>3.21</td><td data-formula="=ROUND(Fixed[Short]+Copies[Short]*Variable[Short], 2)">5770</td><td data-formula="=ROUND(Total[Short]/Copies[Short], 2)">11.54</td></tr>
+      <tr><th scope="row" abbr="Planned">Planned run</th><td>1000</td><td>4165</td><td>3.21</td><td data-formula="=ROUND(Fixed[Planned]+Copies[Planned]*Variable[Planned], 2)">7375</td><td data-formula="=ROUND(Total[Planned]/Copies[Planned], 2)">7.38</td></tr>
+      <tr><th scope="row" abbr="Long">Long run</th><td>2000</td><td>4165</td><td>3.21</td><td data-formula="=ROUND(Fixed[Long]+Copies[Long]*Variable[Long], 2)">10585</td><td data-formula="=ROUND(Total[Long]/Copies[Long], 2)">5.29</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><th scope="row">Lowest</th><td></td><td></td><td></td><td></td><td data-formula="=MIN(Unit)">5.29</td></tr>
+    </tfoot>
+  </table>
+
+  <h2>Terms</h2>
+  <p>We ask for 30 % of the total on acceptance, 30 % when you return the last proofs and the balance on delivery. Proofs are sent within ten working days of receiving the files; the books are delivered within fifteen working days of your approval of the last proof. A further round of proofs, or corrections after the last one, will be charged at the price above.</p>
+  <p class="signature">For Stamperia della Valle<br>the production office</p>
+</body>
+</html>
