@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.1 — 2026-11-07
 
 - **A release is published by hand.** `scripts/release.sh` installs, tests and publishes from a clean checkout of HEAD, then tags and pushes, signed in to npm with Egildo's security key. `.github/workflows/release.yml` is gone, and with it the token and the provenance attestation; the record is *a release moves three remotes at once*, amended 2026-11-07.
 

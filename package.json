@@ -1,6 +1,6 @@
 {
   "name": "@beltype/specimens",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The documents every BelType interface is shown and tested on: finished HTML documents and reduced test cases with their assets, and the lists that find them.",
   "type": "module",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "@beltype/common": "0.1.1"
+    "@beltype/common": "0.1.2"
   },
   "devDependencies": {
     "@types/node": "^22.20.5",

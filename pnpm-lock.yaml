@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@beltype/common':
-        specifier: 0.1.1
-        version: 0.1.1
+        specifier: 0.1.2
+        version: 0.1.2
     devDependencies:
       '@types/node':
         specifier: ^22.20.5
@@ -21,8 +21,8 @@ importers:
 
 packages:
 
-  '@beltype/common@0.1.1':
-    resolution: {integrity: sha512-WXj/dcjx9DdwF8+cgIYEo0Bhfgun3BszBljccglTcP4+PV4gyXD1APxUo8jyRm+eWlg8XCM3ow6izutfq6yiGw==}
+  '@beltype/common@0.1.2':
+    resolution: {integrity: sha512-F/2kwZq4kd17TFMQCdl2El4k5QPnrghFwy8dJCUgVQLDr6Z0VkuZICslfnz2ZthMhBHqbaZFYIrSkG142V7PVw==}
     engines: {node: '>=22'}
 
   '@types/node@22.20.5':
@@ -158,7 +158,7 @@ packages:
 
 snapshots:
 
-  '@beltype/common@0.1.1': {}
+  '@beltype/common@0.1.2': {}
 
   '@types/node@22.20.5':
     dependencies:
