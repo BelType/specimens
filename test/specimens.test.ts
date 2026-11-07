@@ -60,3 +60,16 @@ test('an unknown name is refused, naming the known ones', () => {
   assert.equal(testCase('matrice-2d').name, 'matrice-2d');
   assert.throws(() => testCase('nope'), /contatori-a-zero/);
 });
+
+test('the clean slate: every specimen links the same reset first, and states its root as html:root', () => {
+  const resets = new Set<string>();
+  for (const s of specimens) {
+    const html = fs.readFileSync(s.entry, 'utf8');
+    const first = /<link rel="stylesheet" href="([^"]+)">/.exec(html)?.[1];
+    assert.ok(first?.endsWith('reset.css'), `${s.name} links its reset first`);
+    resets.add(fs.readFileSync(path.join(s.dir, first), 'utf8'));
+    // An engine may add a :root rule of its own after the links (Cicero does, for line-height); a bare html rule loses to it.
+    for (const sheet of walk(s.dir).filter((f) => f.endsWith('.css') && !f.endsWith('reset.css'))) assert.ok(!/^html\s*\{/m.test(fs.readFileSync(sheet, 'utf8')), `${path.relative(root, sheet)} says html:root`);
+  }
+  assert.equal(resets.size, 1, 'the reset is the same bytes everywhere');
+});

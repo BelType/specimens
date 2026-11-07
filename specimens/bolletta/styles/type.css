@@ -10,7 +10,6 @@ html:root {
   color: var(--ink);
   font-kerning: normal;
 }
-body { margin: 0; }
 
 p { margin: 0; text-align: left; hyphens: manual; orphans: 2; widows: 2; }
 h1, h2, h3 { font-family: var(--sans); margin: 0; font-weight: 600; text-align: left; hyphens: manual; break-after: avoid; }
